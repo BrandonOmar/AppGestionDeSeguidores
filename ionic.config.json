@@ -1,0 +1,7 @@
+{
+  "name": "volverasonar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

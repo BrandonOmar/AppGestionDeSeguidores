@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "login-6e919": {
+      "hosting": {
+        "app": [
+          "login-6e919"
+        ]
+      }
+    }
+  }
+}

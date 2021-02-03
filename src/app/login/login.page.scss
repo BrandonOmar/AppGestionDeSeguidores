@@ -1,0 +1,24 @@
+.icon{
+    max-width: 32vh;
+    display: block;
+    margin: 0 auto;
+    --ionicon-stroke-width: 16px;
+}
+
+ion-input, ion-item{
+    --background: transparent;
+}
+ion-content{
+    --background: aliceblue;
+}
+
+.text-danger{
+    color: #cf3c4f;
+}
+.google{
+    --background: #DB4437;
+}
+
+.facebook{
+    --background: #3b5998;
+}
