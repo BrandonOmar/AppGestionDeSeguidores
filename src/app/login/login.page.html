@@ -6,16 +6,16 @@
 
 
 <ion-content class="ion-padding">
-  <img class="icon" src="assets/icon/vas.png" width="800" height="150">
+  <img class="icon" src="assets/icon/vas.png" width="700" height="150">
 
   <form autocomplete="off" (submit)="doLogin()">
     <ion-item></ion-item>
     <ion-item>
-      <ion-label color="light" position="floating"> Correo electrónico <span class="text-danger">*</span></ion-label>
+      <ion-label color="dark" position="floating"> Correo electrónico <span class="text-danger">*</span></ion-label>
       <ion-input type="text" [(ngModel)]="email" name="email" required="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label color="light" position="floating"> Contraseña <span class="text-danger">*</span></ion-label>
+      <ion-label color="dark" position="floating"> Contraseña <span class="text-danger">*</span></ion-label>
       <ion-input [(ngModel)]="password" type="password" name="password" required="true"></ion-input>
     </ion-item>
     <ion-button class="ion-margin-top" type="submit" expand="block">Entrar</ion-button>
