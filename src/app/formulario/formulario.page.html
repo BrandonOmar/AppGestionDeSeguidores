@@ -1,73 +1,11 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Formulario</ion-title>
-  </ion-toolbar>
+<div class="form-container">
+  <h1>Datos del usuario</h1>
+  <form [formGroup]="formDatosSeguidor" (ngSubmit)="onSaveForm()">
+    <input type="text" formControlName="nombre" placeholder="Nombre:">
+    <input type="text" formControlName="edad" placeholder="Edad:">
+    <input type="text" formControlName="calificacion" placeholder="Calificación:">
+    <textarea type="textarea" formControlName="comentario" placeholder="Comentarios:"></textarea>
 
-  
-
-</ion-header>
-
-<ion-content>
-    
-      <form>
-  
-        <ion-list>
-    
-        <ion-item>
-          <ion-label position="floating">Nombre Completo:</ion-label>
-          <ion-input type="text" name="name" clearInput="true" required></ion-input>
-        </ion-item>
-    
-    
-        <ion-item>
-          <ion-label position="floating">Correo:</ion-label>
-          <ion-input type="email" name="email" clearInput="true" required></ion-input>
-        </ion-item>
-    
-        <ion-item>
-          <ion-label position="floating">Contraseña:</ion-label>
-          <ion-input type="password" name="contrasena" clearInput="true" required></ion-input>
-        </ion-item>
-    
-        
-    
-    
-        <ion-item>
-          <ion-label>Toggle</ion-label>
-          <ion-toggle slot="end" checked></ion-toggle>
-        </ion-item>
-    
-        <ion-item>
-          <ion-label position="floating">¿Quisieras que volvieramos a tu escuela?</ion-label>
-          <ion-checkbox slot="start" ></ion-checkbox>
-          <ion-label>Checkbox</ion-label>
-        </ion-item>
-        
-    
-        <ion-item>
-          <ion-label position="floating">¿Cómo nos calificas?</ion-label>
-          <ion-range dualKnobs="true" min="0" max="10" step="1" snaps="true">
-            <ion-label slot="start">0</ion-label>
-            <ion-label slot="end">10</ion-label>
-          </ion-range>
-    
-        </ion-item>
-        
-        <ion-item>
-          <ion-label position="floating">Comentarios:</ion-label>
-          <ion-textarea rows="5" cols="20" placeholder="Enter any notes here..."></ion-textarea>
-        </ion-item>
-    
-        <ion-row>
-          <ion-col>
-            <ion-button type="submit" color="primary" shape="full" >Enviar Formulario</ion-button>
-          </ion-col>
-        </ion-row>
-    
-        </ion-list>
-    
-        
-      </form>
-
-
-</ion-content>
+    <button type="submit" class="btn-send"> Enviar </button>
+  </form>
+</div>

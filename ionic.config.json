@@ -1,9 +1,13 @@
 {
   "name": "volverasonar",
   "integrations": {
+<<<<<<< HEAD
     "capacitor": {
       "enabled": false
     },
+=======
+    "capacitor": {},
+>>>>>>> fce09a5a4c65e18901d3a547aa6799a3c4aada8d
     "cordova": {}
   },
   "type": "angular"

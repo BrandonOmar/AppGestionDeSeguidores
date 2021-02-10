@@ -2,22 +2,35 @@ import { Injectable } from '@angular/core';
 import { User } from '../shared/user.interface';
 import { AngularFireAuth } from '@angular/fire/auth';
 import firebase from 'firebase';
-import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore'
+import {AngularFirestore, AngularFirestoreDocument,AngularFirestoreCollection} from '@angular/fire/firestore'
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
+<<<<<<< HEAD
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 //import { auth } from 'firebase';
 
+=======
+import {DatosI} from '../models/datosSeguidor.interface';
+>>>>>>> fce09a5a4c65e18901d3a547aa6799a3c4aada8d
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  private datosCollection : AngularFirestoreCollection<DatosI>;
+
   public user$: Observable<User>;
 
+<<<<<<< HEAD
   constructor( private afAuth: AngularFireAuth, private afs: AngularFirestore, private fb:Facebook) { 
+=======
+  constructor( private afAuth: AngularFireAuth, private afs: AngularFirestore) 
+  { 
+
+    this.datosCollection = afs.collection<DatosI>('DatosSeguidores');
+>>>>>>> fce09a5a4c65e18901d3a547aa6799a3c4aada8d
 
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
@@ -28,6 +41,13 @@ export class AuthService {
       } )
     );
   }
+
+  guardarDatosSeguidores(newDatosSeguidor : DatosI): void
+  {
+    this.datosCollection.add(newDatosSeguidor);
+  }
+
+
 
   async loginGoogle():Promise<User>{
     try {
