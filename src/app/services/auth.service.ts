@@ -6,6 +6,10 @@ import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestor
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
+//import { auth } from 'firebase';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +17,7 @@ export class AuthService {
 
   public user$: Observable<User>;
 
-  constructor( private afAuth: AngularFireAuth, private afs: AngularFirestore) { 
+  constructor( private afAuth: AngularFireAuth, private afs: AngularFirestore, private fb:Facebook) { 
 
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
@@ -82,5 +86,13 @@ export class AuthService {
   //   }
 
   // }
+
+  //loginWithFacebook(){
+    //return this.fb.login(['email', 'public_profile']).then( (response : FacebookLoginResponse) => {
+      //const credential_fb = this.auth.FacebookAuthProvider.credential(response.authResponse.accessToken);
+      //return this.afAuth.authState.signWithCredential(credential_fb);
+    //})
+  //}
+
 
 }
