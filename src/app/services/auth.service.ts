@@ -2,18 +2,25 @@ import { Injectable } from '@angular/core';
 import { User } from '../shared/user.interface';
 import { AngularFireAuth } from '@angular/fire/auth';
 import firebase from 'firebase';
-import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore'
+import {AngularFirestore, AngularFirestoreDocument,AngularFirestoreCollection} from '@angular/fire/firestore'
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+
+import {DatosI} from '../models/datosSeguidor.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  private datosCollection : AngularFirestoreCollection<DatosI>;
+
   public user$: Observable<User>;
 
-  constructor( private afAuth: AngularFireAuth, private afs: AngularFirestore) { 
+  constructor( private afAuth: AngularFireAuth, private afs: AngularFirestore) 
+  { 
+
+    this.datosCollection = afs.collection<DatosI>('DatosSeguidores');
 
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
@@ -24,6 +31,13 @@ export class AuthService {
       } )
     );
   }
+
+  guardarDatosSeguidores(newDatosSeguidor : DatosI): void
+  {
+    this.datosCollection.add(newDatosSeguidor);
+  }
+
+
 
   async loginGoogle():Promise<User>{
     try {

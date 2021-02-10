@@ -1,7 +1,8 @@
 {
   "name": "volverasonar",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

@@ -1,7 +1,8 @@
-import { NgModule, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {FormsModule} from '@angular/forms'
-
+import {AuthService} from '../services/auth.service';
+import {FormControl, FormGroup} from '@angular/forms'
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-formulario',
@@ -10,24 +11,59 @@ import {FormsModule} from '@angular/forms'
 })
 export class FormularioPage implements OnInit {
 
-  constructor(
 
-    private router: Router
+  createFormGroup()
+  {
+    return new FormGroup(
+      {
+        nombre : new FormControl(''),
+        edad : new FormControl(''),
+        calificacion : new FormControl(''),
+        comentario : new FormControl('')
+      });
+  }
 
-  ) { }
+  formDatosSeguidor : FormGroup;
+
+  constructor(private router: Router, private service : AuthService, public alertController: AlertController) 
+  {
+    this.formDatosSeguidor = this.createFormGroup();
+  }
 
   ngOnInit() {
   }
 
-
-  form()
+  onResetForm()
   {
-    alert("Estás haciendo clic en form");
+    this.formDatosSeguidor.reset();
   }
 
-  face()
+  onSaveForm()
   {
-    alert("Vas hacia la pagina de facebook");
+    try {
+
+      this.service.guardarDatosSeguidores(this.formDatosSeguidor.value); 
+      this.presentAlert();
+      this.onResetForm();
+    } 
+    catch (error) {
+      console.log('Error -> ', error)
+    }
+       
   }
+
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      translucent : true,
+      header: 'Mensaje',
+      message: 'Datos guardados correctamente',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
 
 }
