@@ -6,13 +6,13 @@ import {AngularFirestore, AngularFirestoreDocument,AngularFirestoreCollection} f
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-<<<<<<< HEAD
+
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 //import { auth } from 'firebase';
 
-=======
+
 import {DatosI} from '../models/datosSeguidor.interface';
->>>>>>> fce09a5a4c65e18901d3a547aa6799a3c4aada8d
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,14 +23,12 @@ export class AuthService {
 
   public user$: Observable<User>;
 
-<<<<<<< HEAD
-  constructor( private afAuth: AngularFireAuth, private afs: AngularFirestore, private fb:Facebook) { 
-=======
-  constructor( private afAuth: AngularFireAuth, private afs: AngularFirestore) 
+
+  constructor( private afAuth: AngularFireAuth, private afs: AngularFirestore, private fb:Facebook)
   { 
 
     this.datosCollection = afs.collection<DatosI>('DatosSeguidores');
->>>>>>> fce09a5a4c65e18901d3a547aa6799a3c4aada8d
+
 
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
