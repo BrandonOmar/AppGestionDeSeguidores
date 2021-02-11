@@ -18,9 +18,12 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+<<<<<<< HEAD
   loginGoogle() {
     alert("Estás haciendo login con Google");
   }
+=======
+>>>>>>> 4a044be (Funcionamiento de Login con Twitter)
 
   //loginFacebook() {
     //this.authSvc.loginWithFacebook().then(res => {
@@ -39,13 +42,31 @@ export class LoginPage implements OnInit {
         const isVerified = this.authSvc.isEmailVerified(user);
         console.log("verified -> ", isVerified)
         this.redirectUser(isVerified);
+<<<<<<< HEAD
         //  alert("Tu nombre es: "+ user.displayName+ " Tu correo es: "+ user.email);
         //  this.authSvc.register(user.email,user.displayName);
+=======
+      //  alert("Tu nombre es: "+ user.displayName+ " Tu correo es: "+ user.email);
+>>>>>>> 4a044be (Funcionamiento de Login con Twitter)
       }
     } catch (error) {
       console.log("Error ->", error);
     }
 
+  }
+
+  async onLoginTwitter()
+  {
+    
+    try {
+      const user = await this.authSvc.loginTwitter();
+      if(user){
+        this.navCtrl.navigateForward('/formulario');
+      alert("Tu nombre es: "+ user.displayName+ " Tu correo es: "+ user.email);
+      }
+    } catch (error) {
+      console.log("Error ->" , error);
+    }
 
   }
 
@@ -58,5 +79,8 @@ export class LoginPage implements OnInit {
     }
 
   }
+
+ 
+
 
 }
