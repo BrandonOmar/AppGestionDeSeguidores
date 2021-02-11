@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import {NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -13,26 +14,25 @@ export class LoginPage implements OnInit {
   email: string;
   password: string;
 
-  constructor(public router: Router, private authSvc: AuthService) { }
+  constructor(public router: Router, private authSvc: AuthService, private navCtrl: NavController) { }
 
   ngOnInit() {
   }
 
-<<<<<<< HEAD
+
   loginGoogle() {
     alert("Estás haciendo login con Google");
   }
-=======
->>>>>>> 4a044be (Funcionamiento de Login con Twitter)
 
-  //loginFacebook() {
-    //this.authSvc.loginWithFacebook().then(res => {
-      //this.router.navigate(['/formulario']);
-    //}).catch(error => {
-      //alert('Todos los datos son incorrectos');
-    //})
-  //}
-
+//--------------------------FACEBOOK------------------------------------------//
+  loginFacebook() {
+    this.authSvc.loginWithFacebook().then(res => {
+      this.navCtrl.navigateForward('/formulario');
+    }).catch(error => {
+      alert('Error');
+    })
+  }
+//----------------------------------------------------------------------------//
 
   async onLoginGoogle() {
 
@@ -42,12 +42,11 @@ export class LoginPage implements OnInit {
         const isVerified = this.authSvc.isEmailVerified(user);
         console.log("verified -> ", isVerified)
         this.redirectUser(isVerified);
-<<<<<<< HEAD
+
         //  alert("Tu nombre es: "+ user.displayName+ " Tu correo es: "+ user.email);
         //  this.authSvc.register(user.email,user.displayName);
-=======
+
       //  alert("Tu nombre es: "+ user.displayName+ " Tu correo es: "+ user.email);
->>>>>>> 4a044be (Funcionamiento de Login con Twitter)
       }
     } catch (error) {
       console.log("Error ->", error);

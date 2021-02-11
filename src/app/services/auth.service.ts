@@ -8,7 +8,7 @@ import { switchMap } from 'rxjs/operators';
 
 
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
-//import { auth } from 'firebase';
+
 
 
 import {DatosI} from '../models/datosSeguidor.interface';
@@ -69,6 +69,14 @@ export class AuthService {
     }
   }
 
+  //--------------------------FACEBOOK------------------------------------------//
+  loginWithFacebook(){
+    return this.fb.login(['email', 'public_profile']).then( (response : FacebookLoginResponse) => {
+      const credential_fb = firebase.auth.FacebookAuthProvider.credential(response.authResponse.accessToken);
+      return this.afAuth.signInWithCredential(credential_fb);
+    })
+  }
+//------------------------------------------------------------------------------//
 
   async logout(): Promise<void>{
     
@@ -103,13 +111,4 @@ export class AuthService {
 
     return user.emailVerified === true ? true : false;
   } 
-
-  //loginWithFacebook(){
-    //return this.fb.login(['email', 'public_profile']).then( (response : FacebookLoginResponse) => {
-      //const credential_fb = this.auth.FacebookAuthProvider.credential(response.authResponse.accessToken);
-      //return this.afAuth.authState.signWithCredential(credential_fb);
-    //})
-  //}
-
-
 }
