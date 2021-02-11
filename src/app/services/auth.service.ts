@@ -50,6 +50,18 @@ export class AuthService {
     }
   }
 
+  async loginTwitter():Promise<User>{
+    try {
+      const { user } = await this.afAuth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+      this.updateUserData(user);
+      return user;
+    }
+    catch (error){
+      console.log('Error -> ',error)
+    }
+  }
+
+
   async logout(): Promise<void>{
     
     try {
@@ -82,19 +94,6 @@ export class AuthService {
   isEmailVerified(user: User): boolean{
 
     return user.emailVerified === true ? true : false;
-  }
-
-  // async register(email: string, displayName: string): Promise<User> {
-
-  //   try {
-      
-  //     const {user} = await this.afAuth(email,displayName);
-  //     return user;
-
-  //   } catch (error) {
-  //     console.log('Error->', error)
-  //   }
-
-  // }
+  } 
 
 }

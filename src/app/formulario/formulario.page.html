@@ -1,5 +1,10 @@
+<ion-content
+  [scrollEvents]="true">
 <div class="form-container">
+  
   <h1>Datos del usuario</h1>
+
+  
   <form [formGroup]="formDatosSeguidor" (ngSubmit)="onSaveForm()">
     <input type="text" formControlName="nombre" placeholder="Nombre:">
     <input type="text" formControlName="edad" placeholder="Edad:">
@@ -8,4 +13,6 @@
 
     <button type="submit" class="btn-send"> Enviar </button>
   </form>
+
 </div>
+</ion-content>

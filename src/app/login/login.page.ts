@@ -19,10 +19,6 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  loginGoogle()
-  {
-    alert("Estás haciendo login con Google");
-  }
 
   async onLoginGoogle()
   {
@@ -34,12 +30,25 @@ export class LoginPage implements OnInit {
         console.log("verified -> ", isVerified)
         this.redirectUser(isVerified);
       //  alert("Tu nombre es: "+ user.displayName+ " Tu correo es: "+ user.email);
-      //  this.authSvc.register(user.email,user.displayName);
       }
     } catch (error) {
       console.log("Error ->" , error);
     }
 
+  }
+
+  async onLoginTwitter()
+  {
+    
+    try {
+      const user = await this.authSvc.loginTwitter();
+      if(user){
+        this.navCtrl.navigateForward('/formulario');
+      alert("Tu nombre es: "+ user.displayName+ " Tu correo es: "+ user.email);
+      }
+    } catch (error) {
+      console.log("Error ->" , error);
+    }
 
   }
 
@@ -53,5 +62,8 @@ export class LoginPage implements OnInit {
     }
 
   }
+
+ 
+
 
 }
