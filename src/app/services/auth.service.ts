@@ -7,9 +7,6 @@ import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 
-import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
-
-
 
 import {DatosI} from '../models/datosSeguidor.interface';
 
@@ -24,7 +21,7 @@ export class AuthService {
   public user$: Observable<User>;
 
 
-  constructor( private afAuth: AngularFireAuth, private afs: AngularFirestore, private fb:Facebook)
+  constructor( private afAuth: AngularFireAuth, private afs: AngularFirestore)
   { 
 
     this.datosCollection = afs.collection<DatosI>('DatosSeguidores');
@@ -44,8 +41,6 @@ export class AuthService {
   {
     this.datosCollection.add(newDatosSeguidor);
   }
-
-
 
   async loginGoogle():Promise<User>{
     try {
@@ -69,14 +64,16 @@ export class AuthService {
     }
   }
 
-  //--------------------------FACEBOOK------------------------------------------//
-  loginWithFacebook(){
-    return this.fb.login(['email', 'public_profile']).then( (response : FacebookLoginResponse) => {
-      const credential_fb = firebase.auth.FacebookAuthProvider.credential(response.authResponse.accessToken);
-      return this.afAuth.signInWithCredential(credential_fb);
-    })
+  async loginFacebook():Promise<User>{
+    try {
+      const { user } = await this.afAuth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+      this.updateUserData(user);
+      return user;
+    }
+    catch (error){
+      console.log('Error -> ',error)
+    }
   }
-//------------------------------------------------------------------------------//
 
   async logout(): Promise<void>{
     
@@ -88,7 +85,6 @@ export class AuthService {
     }
 
   }
-
 
   private updateUserData(user : User)
   {

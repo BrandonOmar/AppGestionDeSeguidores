@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
+//import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   imports: [
@@ -14,7 +15,9 @@ import { LoginPage } from './login.page';
     FormsModule,
     IonicModule,
     LoginPageRoutingModule
+    //ToastrModule.forRoot()
   ],
+  bootstrap: [LoginPage],
   declarations: [LoginPage]
 })
-export class LoginPageModule {}
+export class LoginPageModule { }

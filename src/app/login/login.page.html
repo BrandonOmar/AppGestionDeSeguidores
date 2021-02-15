@@ -29,11 +29,11 @@
         </ion-button>
       </ion-col>
 
-      <ion-col size="3">
-        <ion-button class="facebook">
-          <ion-icon name="logo-facebook" (click)="loginFacebook"></ion-icon>
-        </ion-button>
-      </ion-col>
+          <ion-col size="3">
+            <ion-button class="facebook" (click)="onLoginFacebook(email,password)">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </ion-button>
+          </ion-col>
 
       <ion-col size="3">
         <ion-button class="twitter" (click)="onLoginTwitter(email,password)">
@@ -42,10 +42,11 @@
       </ion-col>
 
       <ion-col size="3">
-        <ion-button class="instagram">
+        <ion-button class="instagram" (click)="onLoginInstagram(email,password)">
           <ion-icon name="logo-instagram"></ion-icon>
         </ion-button>
       </ion-col>
+
 
     </ion-row>
   </ion-grid>
@@ -55,3 +56,4 @@
   </div>
 
 </ion-content>
+

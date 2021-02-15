@@ -16,6 +16,9 @@ import { environment } from 'src/environments/environment';
 import {AuthService} from './services/auth.service';
 
 import { Facebook } from '@ionic-native/facebook/ngx';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { ToastrModule } from 'ng6-toastr-notifications'
+//import { ToastrManager } from 'ng6-toastr-notifications';
 
 
 
@@ -32,13 +35,16 @@ import { Facebook } from '@ionic-native/facebook/ngx';
    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    ReactiveFormsModule
+    //ToastrManager,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     Facebook,
     StatusBar,
     SplashScreen,
     AuthService,
+    
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

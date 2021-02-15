@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import {NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginPage implements OnInit {
   email: string;
   password: string;
 
-  constructor(public router: Router, private authSvc: AuthService, private navCtrl: NavController) { }
+  constructor(public router: Router, private authSvc: AuthService, private navCtrl: NavController, private fb: FormBuilder) { }
+
 
   ngOnInit() {
   }
@@ -23,16 +25,6 @@ export class LoginPage implements OnInit {
   loginGoogle() {
     alert("Estás haciendo login con Google");
   }
-
-//--------------------------FACEBOOK------------------------------------------//
-  loginFacebook() {
-    this.authSvc.loginWithFacebook().then(res => {
-      this.navCtrl.navigateForward('/formulario');
-    }).catch(error => {
-      alert('Error');
-    })
-  }
-//----------------------------------------------------------------------------//
 
   async onLoginGoogle() {
 
@@ -46,7 +38,7 @@ export class LoginPage implements OnInit {
         //  alert("Tu nombre es: "+ user.displayName+ " Tu correo es: "+ user.email);
         //  this.authSvc.register(user.email,user.displayName);
 
-      //  alert("Tu nombre es: "+ user.displayName+ " Tu correo es: "+ user.email);
+        //  alert("Tu nombre es: "+ user.displayName+ " Tu correo es: "+ user.email);
       }
     } catch (error) {
       console.log("Error ->", error);
@@ -54,21 +46,32 @@ export class LoginPage implements OnInit {
 
   }
 
-  async onLoginTwitter()
-  {
-    
+  async onLoginTwitter() {
+
     try {
       const user = await this.authSvc.loginTwitter();
-      if(user){
+      if (user) {
         this.navCtrl.navigateForward('/formulario');
-      alert("Tu nombre es: "+ user.displayName+ " Tu correo es: "+ user.email);
+        alert("Tu nombre es: " + user.displayName + " Tu correo es: " + user.email);
       }
     } catch (error) {
-      console.log("Error ->" , error);
+      console.log("Error ->", error);
     }
 
   }
+  async onLoginFacebook() {
 
+    try {
+      const user = await this.authSvc.loginFacebook();
+      if (user) {
+        this.navCtrl.navigateForward('/formulario');
+        alert("Tu nombre es: " + user.displayName + " Tu correo es: " + user.email);
+      }
+    } catch (error) {
+      console.log("Error ->", error);
+    }
+
+  }
 
   redirectUser(isVerified: boolean) {
 
@@ -79,7 +82,7 @@ export class LoginPage implements OnInit {
 
   }
 
- 
+
 
 
 }
