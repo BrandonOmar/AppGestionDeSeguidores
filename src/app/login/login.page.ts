@@ -22,9 +22,11 @@ export class LoginPage implements OnInit {
   }
 
 
+
   loginGoogle() {
     alert("Estás haciendo login con Google");
   }
+
 
   async onLoginGoogle() {
 
@@ -34,11 +36,6 @@ export class LoginPage implements OnInit {
         const isVerified = this.authSvc.isEmailVerified(user);
         console.log("verified -> ", isVerified)
         this.redirectUser(isVerified);
-
-        //  alert("Tu nombre es: "+ user.displayName+ " Tu correo es: "+ user.email);
-        //  this.authSvc.register(user.email,user.displayName);
-
-        //  alert("Tu nombre es: "+ user.displayName+ " Tu correo es: "+ user.email);
       }
     } catch (error) {
       console.log("Error ->", error);
@@ -81,8 +78,5 @@ export class LoginPage implements OnInit {
     }
 
   }
-
-
-
 
 }

@@ -64,6 +64,7 @@ export class AuthService {
     }
   }
 
+
   async loginFacebook():Promise<User>{
     try {
       const { user } = await this.afAuth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
