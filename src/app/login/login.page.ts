@@ -65,7 +65,7 @@ export class LoginPage implements OnInit {
       const user = await this.authSvc.loginFacebook();
       if (user) {
         this.navCtrl.navigateForward('/formulario');
-        alert("Tu nombre es: " + user.displayName + " Tu correo es: " + user.email);
+        //alert("Tu nombre es: " + user.displayName + " Tu correo es: " + user.email);
       }
     } catch (error) {
       console.log("Error ->", error);
