@@ -1,18 +1,95 @@
-<ion-content
-  [scrollEvents]="true">
-<div class="form-container">
-  
-  <h1>Datos del usuario</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+</head>
 
-  
-  <form [formGroup]="formDatosSeguidor" (ngSubmit)="onSaveForm()">
-    <input type="text" formControlName="nombre" placeholder="Nombre:">
-    <input type="text" formControlName="edad" placeholder="Edad:">
-    <input type="text" formControlName="calificacion" placeholder="Calificación:">
-    <textarea type="textarea" formControlName="comentario" placeholder="Comentarios:"></textarea>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      "RWR Rockwell Road"
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-    <button type="submit" class="btn-send"> Enviar </button>
-  </form>
+<ion-content [scrollEvents]="true">
+  <div class="form-container">
+    <img class="icon" src="assets/icon/rwr.jpeg" width="1000" height="200">
 
-</div>
+    <h1>Cuéntanos....</h1>
+    <form [formGroup]="formDatosSeguidor" (ngSubmit)="onSaveForm()">
+
+      <ion-list>
+        <ion-item>
+          <label>¿Te gustaría recibir nuestras promociones, ofertas o sorteos de RWR?</label>
+        </ion-item>
+        <ion-radio-group value="valor1" formControlName="respuesta1">
+        <ion-item>
+          <ion-label>Si</ion-label>
+          <ion-radio slot="start" value="Si"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio slot="start" value="No"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <br>
+      <ion-list>
+        <ion-item>
+          <label>¿Te gustaría participar en el Club de RWR?</label>
+        </ion-item>
+        <ion-radio-group value="valor2" formControlName="respuesta2">
+        <ion-item>
+          <ion-label>Si</ion-label>
+          <ion-radio slot="start" value="Si"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio slot="start" value="No"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  <br>
+      <ion-item>
+        <label>¿Qué tanto nos recomendarías de esta conferencia a otras escuelas?</label>
+      </ion-item>
+      <ion-item>
+      <ion-radio-group value="valor3" formControlName="calificacion">
+      
+        <p class="clasificacion">
+          <input id="radio1" type="radio" name="estrellas" value="5">
+      <label for="radio1">★</label>     
+
+      <input id="radio2" type="radio" name="estrellas" value="4">         
+      <label for="radio2">★</label>
+
+      <input id="radio3" type="radio" name="estrellas" value="3">       
+      <label for="radio3">★</label>         
+
+      <input id="radio4" type="radio" name="estrellas" value="2">          
+     <label for="radio4">★</label>  
+
+      <input id="radio5" type="radio" name="estrellas" value="1">
+      <label for="radio5">★</label>
+        </p>
+     
+      </ion-radio-group>
+    </ion-item>
+
+    <br>
+    <br>
+      <ion-item>
+        <textarea type="textarea" formControlName="comentario" placeholder="Comentarios:"></textarea>
+      </ion-item>
+      <button type="submit" class="btn-send"> Enviar </button>
+    </form>
+
+
+
+  </div>
 </ion-content>

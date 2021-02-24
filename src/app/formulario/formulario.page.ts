@@ -4,6 +4,8 @@ import {AuthService} from '../services/auth.service';
 import {FormControl, FormGroup} from '@angular/forms'
 import { AlertController } from '@ionic/angular';
 
+
+
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.page.html',
@@ -11,13 +13,39 @@ import { AlertController } from '@ionic/angular';
 })
 export class FormularioPage implements OnInit {
 
+  defaultSelectedRadio = "radio_2";
+  //Get value on ionChange on IonRadioGroup
+  selectedRadioGroup:any;
+  //Get value on ionSelect on IonRadio item
+  selectedRadioItem:any;
+
+  radio_list = [
+    {
+      id: '1',
+      name: 'radio_list',
+      value: 'Si',
+      text: 'Si',
+      disabled: false,
+      checked: false,
+      color: 'success'
+    }, {
+      id: '2',
+      name: 'radio_list',
+      value: 'No',
+      text: 'No',
+      disabled: false,
+      checked: true,
+      color: 'danger'
+    },
+  ];
+
 
   createFormGroup()
   {
     return new FormGroup(
       {
-        nombre : new FormControl(''),
-        edad : new FormControl(''),
+        respuesta1 : new FormControl(''),
+        respuesta2 : new FormControl(''),
         calificacion : new FormControl(''),
         comentario : new FormControl('')
       });
