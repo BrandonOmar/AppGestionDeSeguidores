@@ -33,9 +33,7 @@ export class LoginPage implements OnInit {
     try {
       const user = await this.authSvc.loginGoogle();
       if (user) {
-        const isVerified = this.authSvc.isEmailVerified(user);
-        console.log("verified -> ", isVerified)
-        this.redirectUser(isVerified);
+        this.navCtrl.navigateForward('/formulario');
       }
     } catch (error) {
       console.log("Error ->", error);

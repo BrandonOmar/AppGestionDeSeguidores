@@ -44,8 +44,13 @@ export class FormularioPage implements OnInit {
   {
     return new FormGroup(
       {
+        estado : new FormControl(''),
+        municipio : new FormControl(''),
+        numtelefono : new FormControl(''),
+        escuela : new FormControl(''),
         respuesta1 : new FormControl(''),
         respuesta2 : new FormControl(''),
+        respuesta3 : new FormControl(''),
         calificacion : new FormControl(''),
         comentario : new FormControl('')
       });

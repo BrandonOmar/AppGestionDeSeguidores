@@ -16,11 +16,30 @@
 
 <ion-content [scrollEvents]="true">
   <div class="form-container">
-    <img class="icon" src="assets/icon/rwr.jpeg" width="1000" height="200">
+    <img class="icon" src="assets/icon/image-rwr.jpeg" width="1000" height="250">
 
     <h1>Cuéntanos....</h1>
     <form [formGroup]="formDatosSeguidor" (ngSubmit)="onSaveForm()">
 
+      <ion-item>
+        <ion-label position="floating">Estado: </ion-label>
+        <ion-input type="text" formControlName="estado"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Municipio: </ion-label>
+        <ion-input type="text" formControlName="municipio"></ion-input>
+      </ion-item>  
+      <br>
+      <ion-item>
+        <ion-label position="floating">Número Teléfonico: </ion-label>
+        <ion-input type="number" formControlName="numtelefono"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="floating">Escuela proviencia: </ion-label>
+        <ion-input type="text" formControlName="escuela"></ion-input>
+      </ion-item>
+      <br>
       <ion-list>
         <ion-item>
           <label>¿Te gustaría recibir nuestras promociones, ofertas o sorteos de RWR?</label>
@@ -40,7 +59,7 @@
     <br>
       <ion-list>
         <ion-item>
-          <label>¿Te gustaría participar en el Club de RWR?</label>
+          <label>¿Te gustaría formar parte de la familia RWR?</label>
         </ion-item>
         <ion-radio-group value="valor2" formControlName="respuesta2">
         <ion-item>
@@ -55,6 +74,23 @@
       </ion-radio-group>
     </ion-list>
   <br>
+  <ion-list>
+    <ion-item>
+      <label>¿Te gustaría ver más conferencias?</label>
+    </ion-item>
+    <ion-radio-group value="valor2" formControlName="respuesta3">
+    <ion-item>
+      <ion-label>Si</ion-label>
+      <ion-radio slot="start" value="Si"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>No</ion-label>
+      <ion-radio slot="start" value="No"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+<br>
       <ion-item>
         <label>¿Qué tanto nos recomendarías de esta conferencia a otras escuelas?</label>
       </ion-item>
@@ -84,8 +120,10 @@
     <br>
     <br>
       <ion-item>
+        <br>
         <textarea type="textarea" formControlName="comentario" placeholder="Comentarios:"></textarea>
       </ion-item>
+      <br>
       <button type="submit" class="btn-send"> Enviar </button>
     </form>
 

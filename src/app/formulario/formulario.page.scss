@@ -1,13 +1,19 @@
+.ion-radio {
+  background-color: #73ED00;
+  color: white;
+  font-size: 45px;
+}
+
 .form-container {
     font: 95% Arial, Helvetica, sans-serif;
     max-width: 500px;
     padding: 16px;
     margin: 10px auto;
-    background: #f7f7f7;
+    background: #DAF9EE;
 }
 
 .form-container h1 {
-    background: #00D7B0;
+    background: #00BFA5;
     padding: 20px 0;
     font-size: 140%;
     font-weight: 300;
@@ -36,8 +42,8 @@
     box-sizing: border-box;
     width: 100%;
     padding: 3%;
-    background: #43d1af;
-    border-bottom: 2px solid #30c29e;
+    background: #00BFA5;
+    border-bottom: 2px solid #00BFA5;
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
@@ -46,20 +52,20 @@
 }
 
 .form-container .btn-send:hover{
-    background: #2ebc99;
+    background: #00BFA5;
 }
 
   
   /* Works - pass "my-custom-class" in cssClass to increase specificity */
   .my-custom-class .alert-wrapper {
     background: #f50000;
-    background-color: #2ebc99;
+    background-color: #00BFA5;
     width: 150px;
   }
 
   .my-custom-class {
     --background: #dd1111;
-    --background-color: #43d1af;
+    --background-color: #00BFA5;
     --background-attachment: fixed;
     --width: 150px;
   }
@@ -72,7 +78,7 @@
       #form {
         width: 250px;
         margin: 0 auto;
-        height: 80px;
+        height: 100px;
       }
       
       #form p {
@@ -80,7 +86,7 @@
       }
       
       #form label {
-        font-size: 30px;
+        font-size: 50px;
       }
       
       input[type="radio"] {
@@ -88,7 +94,7 @@
       }
       
       label {
-        color: grey;
+        color: #424242;
       }
       
       .clasificacion {
