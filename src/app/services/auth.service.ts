@@ -79,11 +79,17 @@ export class AuthService {
 
   async loginGithub():Promise<User>{
     
+    try {
       const { user } = await this.afAuth.signInWithPopup(new firebase.auth.GithubAuthProvider());
       this.updateUserData(user);
       return user;
+    }
+    catch (error){
+      console.log('Error -> ',error);
+    }
     
   }
+
 
   async logout(): Promise<void>{
     

@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { NavController } from '@ionic/angular';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/auth';
+import firebase from 'firebase';
 
 @Component({
   selector: 'app-login',
@@ -15,16 +17,11 @@ export class LoginPage implements OnInit {
   email: string;
   password: string;
 
-  constructor(public router: Router, private authSvc: AuthService, private navCtrl: NavController, private fb: FormBuilder) { }
+  constructor(public router: Router, private authSvc: AuthService, private navCtrl: NavController, 
+    private fb: FormBuilder, private afAuth: AngularFireAuth) { }
 
 
   ngOnInit() {
-  }
-
-
-
-  loginGoogle() {
-    alert("Estás haciendo login con Google");
   }
 
 
@@ -70,13 +67,15 @@ export class LoginPage implements OnInit {
 
   async onLoginGithub() {
 
+    try {
       const user = await this.authSvc.loginGithub();
       if (user) {
         this.navCtrl.navigateForward('/formulario');
         alert("Tu nombre es: " + user.displayName + " Tu correo es: " + user.email);
       }
-   
-
+    } catch (error) {
+      console.log("Error ->", error);
+    }
   }
 
 
