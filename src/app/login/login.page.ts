@@ -68,6 +68,18 @@ export class LoginPage implements OnInit {
 
   }
 
+  async onLoginGithub() {
+
+      const user = await this.authSvc.loginGithub();
+      if (user) {
+        this.navCtrl.navigateForward('/formulario');
+        alert("Tu nombre es: " + user.displayName + " Tu correo es: " + user.email);
+      }
+   
+
+  }
+
+
   redirectUser(isVerified: boolean) {
 
     if (isVerified) {
