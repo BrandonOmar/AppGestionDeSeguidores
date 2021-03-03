@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {AuthService} from '../services/auth.service';
-import {FormControl, FormGroup} from '@angular/forms'
+import {FormControl, FormGroup, Validators, FormBuilder, AbstractControl} from '@angular/forms'
 import { AlertController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 
 
@@ -44,23 +45,25 @@ export class FormularioPage implements OnInit {
   {
     return new FormGroup(
       {
-        estado : new FormControl(''),
-        municipio : new FormControl(''),
-        numtelefono : new FormControl(''),
-        escuela : new FormControl(''),
+        estado : new FormControl('',Validators.required),
+        municipio : new FormControl('',Validators.required),
+        numtelefono : new FormControl('',Validators.required),
+        escuela : new FormControl('',Validators.required),
         respuesta1 : new FormControl(''),
         respuesta2 : new FormControl(''),
         respuesta3 : new FormControl(''),
         calificacion : new FormControl(''),
-        comentario : new FormControl('')
+        comentario : new FormControl('',Validators.required)
       });
   }
 
   formDatosSeguidor : FormGroup;
 
-  constructor(private router: Router, private service : AuthService, public alertController: AlertController) 
+  constructor(private router: Router, private service : AuthService, 
+    public alertController: AlertController, public toastController: ToastController) 
   {
     this.formDatosSeguidor = this.createFormGroup();
+
   }
 
   ngOnInit() {
@@ -73,16 +76,25 @@ export class FormularioPage implements OnInit {
 
   onSaveForm()
   {
-    try {
 
-      this.service.guardarDatosSeguidores(this.formDatosSeguidor.value); 
-      this.presentAlert();
-      this.onResetForm();
-    } 
-    catch (error) {
-      console.log('Error -> ', error)
+    if (this.formDatosSeguidor.valid){
+
+      try {
+
+        this.service.guardarDatosSeguidores(this.formDatosSeguidor.value); 
+        this.presentAlert();
+        this.onResetForm();
+      } 
+      catch (error) {
+        console.log('Error -> ', error)
+      }
+
     }
-       
+    else{
+      this.presentToast();
+      
+    }
+      
   }
 
 
@@ -96,6 +108,16 @@ export class FormularioPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Debe llenar correctamente todos los campos.',
+      duration: 2000,
+      color : 'danger',
+      position : 'middle'
+    });
+    toast.present();
   }
 
 

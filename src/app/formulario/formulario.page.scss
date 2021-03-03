@@ -75,38 +75,13 @@
     --ion-safe-area-bottom: 22px;
   }
 
-      #form {
-        width: 250px;
-        margin: 0 auto;
-        height: 100px;
-      }
-      
-      #form p {
-        text-align: center;
-      }
-      
-      #form label {
-        font-size: 50px;
-      }
-      
-      input[type="radio"] {
-        display: none;
-      }
-      
-      label {
-        color: #424242;
-      }
-      
-      .clasificacion {
-        direction: rtl;
-        unicode-bidi: bidi-override;
-      }
-      
-      label:hover,
-      label:hover ~ label {
-        color: orange;
-      }
-      
-      input[type="radio"]:checked ~ label {
-        color: orange;
-      }
+  ion-icon {
+    font-size: 25px;
+  }
+
+  ion-icon {
+    color: orange;
+  }
+
+
+

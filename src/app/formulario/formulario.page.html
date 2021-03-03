@@ -4,6 +4,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
   <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 
 <ion-header [translucent]="true">
@@ -25,26 +28,51 @@
         <ion-label position="floating">Estado: </ion-label>
         <ion-input type="text" formControlName="estado"></ion-input>
       </ion-item>
+     
+      <span *ngIf="this.formDatosSeguidor.get('estado').errors?.required && this.formDatosSeguidor.get('estado').touched"
+      class="badge badge-danger"> Este campo debe ser llenado</span>
+
+      <br>
       <ion-item>
         <ion-label position="floating">Municipio: </ion-label>
         <ion-input type="text" formControlName="municipio"></ion-input>
+
       </ion-item>
+
+      </ion-item>  
+      <span *ngIf="this.formDatosSeguidor.get('municipio').errors?.required && this.formDatosSeguidor.get('municipio').touched"
+      class="badge badge-danger">
+        Este campo debe ser llenado
+      </span>
+
       <br>
       <ion-item>
         <ion-label position="floating">Número Teléfonico: </ion-label>
         <ion-input type="number" formControlName="numtelefono"></ion-input>
       </ion-item>
+      <span *ngIf="this.formDatosSeguidor.get('numtelefono').errors?.required  && this.formDatosSeguidor.get('numtelefono').touched"
+      class="badge badge-danger">
+        Este campo debe ser llenado
+      </span>
+      
+
       <br>
       <ion-item>
-        <ion-label position="floating">Escuela proviencia: </ion-label>
-        <ion-input type="text" formControlName="escuela"></ion-input>
+        <ion-label position="floating">Escuela procedencia: </ion-label>
+        <ion-input type="text" formControlName="escuela" required></ion-input>
       </ion-item>
+      <span *ngIf="this.formDatosSeguidor.get('escuela').errors?.required && this.formDatosSeguidor.get('escuela').touched"
+      class="badge badge-danger">
+        Este campo debe ser llenado
+      </span>
+
       <br>
       <ion-list>
         <ion-item>
           <label>¿Te gustaría recibir nuestras promociones, ofertas o sorteos de RWR?</label>
         </ion-item>
         <ion-radio-group value="valor1" formControlName="respuesta1">
+
           <ion-item>
             <ion-label>Si</ion-label>
             <ion-radio slot="start" value="Si"></ion-radio>
@@ -57,6 +85,20 @@
         </ion-radio-group>
       </ion-list>
       <br>
+
+        <ion-item>
+          <ion-label>Si</ion-label>
+          <ion-radio slot="start" value="Si" color="success" checked></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio slot="start" value="No" color="danger" checked></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <br>
+
       <ion-list>
         <ion-item>
           <label>¿Te gustaría formar parte de la familia RWR?</label>
@@ -76,6 +118,7 @@
       <br>
       <ion-list>
         <ion-item>
+
           <label>¿Te gustaría ver más conferencias?</label>
         </ion-item>
         <ion-radio-group value="valor2" formControlName="respuesta3">
@@ -91,9 +134,40 @@
         </ion-radio-group>
       </ion-list>
       <br>
+
+          <ion-label>Si</ion-label>
+          <ion-radio slot="start" value="Si" color="success" checked></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio slot="start" value="No" color="danger" checked></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  <br>
+  <ion-list>
+    <ion-item>
+      <label>¿Te gustaría ver más conferencias?</label>
+    </ion-item>
+    <ion-radio-group value="valor2" formControlName="respuesta3">
+    <ion-item>
+      <ion-label>Si</ion-label>
+      <ion-radio slot="start" value="Si" color="success" checked></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>No</ion-label>
+      <ion-radio slot="start" value="No" color="danger" checked></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+<br>
+
       <ion-item>
-        <label>¿Qué tanto nos recomendarías de esta conferencia a otras escuelas?</label>
+        <label>¿Qué tanto recomendarías esta conferencia a otras escuelas?</label>
       </ion-item>
+
       <ion-item>
         <ion-radio-group value="valor3" formControlName="calificacion">
 
@@ -119,15 +193,78 @@
 
       <br>
       <br>
+
+    <ion-item>
+        <ion-list>
+          <ion-radio-group value="calificacion" formControlName="calificacion">
+          <ion-item>
+
+            
+            <ion-radio value="Excelente" color="success" checked></ion-radio>
+            <ion-label style="margin-left: 10px;">
+              <ion-icon name="star"> </ion-icon>
+              <ion-icon name="star"> </ion-icon>
+              <ion-icon name="star"> </ion-icon>
+              <ion-icon name="star"> </ion-icon>
+              <ion-icon name="star"> </ion-icon>
+            </ion-label>
+          </ion-item>
+
+            <ion-item>
+            
+            <ion-radio  value="Muy bueno" color="success" checked></ion-radio>
+            <ion-label style="margin-left: 10px;">
+              <ion-icon name="star"> </ion-icon>
+              <ion-icon name="star"> </ion-icon>
+              <ion-icon name="star"> </ion-icon>
+              <ion-icon name="star"> </ion-icon>
+            </ion-label>
+          </ion-item>
+
+          <ion-item>
+            
+            <ion-radio  value="Bueno" color="secondary" checked></ion-radio>
+            <ion-label style="margin-left: 10px;">
+              <ion-icon name="star"> </ion-icon>
+              <ion-icon name="star"> </ion-icon>
+              <ion-icon name="star"> </ion-icon>
+            </ion-label>
+          </ion-item>
+
+          <ion-item>
+           
+            <ion-radio  value="Regular" color="warning" checked></ion-radio>
+            <ion-label style="margin-left: 10px;">
+              <ion-icon name="star"> </ion-icon>
+              <ion-icon name="star"> </ion-icon>
+            </ion-label>
+          </ion-item>
+
+          <ion-item>
+            
+            <ion-radio  value="Malo" color="danger" checked></ion-radio>
+            <ion-label style="margin-left: 10px;">
+              <ion-icon name="star"> </ion-icon>
+            </ion-label>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+  </ion-item>
+
+    <br>
+
       <ion-item>
-        <br>
         <textarea type="textarea" formControlName="comentario" placeholder="Comentarios:"></textarea>
       </ion-item>
+      <span *ngIf="this.formDatosSeguidor.get('comentario').errors?.required && this.formDatosSeguidor.get('comentario').touched"
+      class="badge badge-danger">
+        Este campo debe ser llenado
+      </span>
+      <br>
+
       <br>
       <button type="submit" class="btn-send"> Enviar </button>
     </form>
-
-
 
   </div>
 </ion-content>
