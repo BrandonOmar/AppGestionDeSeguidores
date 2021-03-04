@@ -4,6 +4,7 @@ import {AuthService} from '../services/auth.service';
 import {FormControl, FormGroup, Validators, FormBuilder, AbstractControl} from '@angular/forms'
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 
 
@@ -45,8 +46,11 @@ export class FormularioPage implements OnInit {
   {
     return new FormGroup(
       {
+        nombre : new FormControl('',Validators.required),
         estado : new FormControl('',Validators.required),
         municipio : new FormControl('',Validators.required),
+        facebook : new FormControl('',Validators.required),
+        email : new FormControl('',Validators.required),
         numtelefono : new FormControl('',Validators.required),
         escuela : new FormControl('',Validators.required),
         respuesta1 : new FormControl(''),
@@ -60,7 +64,7 @@ export class FormularioPage implements OnInit {
   formDatosSeguidor : FormGroup;
 
   constructor(private router: Router, private service : AuthService, 
-    public alertController: AlertController, public toastController: ToastController) 
+    public alertController: AlertController, public toastController: ToastController, private navCtrl: NavController) 
   {
     this.formDatosSeguidor = this.createFormGroup();
 
@@ -108,6 +112,7 @@ export class FormularioPage implements OnInit {
     });
 
     await alert.present();
+    this.navCtrl.navigateForward('/administrador');
   }
 
   async presentToast() {
