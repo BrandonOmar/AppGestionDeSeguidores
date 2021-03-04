@@ -122,5 +122,11 @@ export class AuthService {
   isEmailVerified(user: User): boolean{
 
     return user.emailVerified === true ? true : false;
-  } 
+  }
+  
+  
+  public consultar(coleccion) {
+    return this.afs.collection(coleccion).snapshotChanges();
+  }
+
 }
