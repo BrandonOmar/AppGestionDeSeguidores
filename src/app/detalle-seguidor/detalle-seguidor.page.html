@@ -1,0 +1,90 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="administrador"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      "Detalle de Seguidores"
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true">
+  <div class="form-container">
+    <div>
+      <img style="width: 150px; height: 150px; margin-left: 85px;" src="https://img.icons8.com/color/452/user-group-man-woman.png">
+    </div>
+
+    <h2 class="nombre" style="text-align: center;">
+      {{seguidor.data.nombre}}
+     </h2>
+    
+     <br>
+
+     <ion-item>
+      <ion-label position="stacked">Estado:</ion-label>
+      <ion-input readonly>{{seguidor.data.estado}}</ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Municipio:</ion-label>
+      <ion-input readonly>{{seguidor.data.municipio}}</ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Facebook:</ion-label>
+      <ion-input readonly>{{seguidor.data.facebook}}</ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Correo electrónico:</ion-label>
+      <ion-input readonly>{{seguidor.data.email}}</ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Número de teléfono:</ion-label>
+      <ion-input readonly>{{seguidor.data.numtelefono}}</ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Escuela de procedencia:</ion-label>
+      <ion-input readonly>{{seguidor.data.escuela}}</ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">¿Te gustaría recibir nuestras promociones, ofertas o sorteos de RWR?</ion-label>
+      <ion-input readonly>{{seguidor.data.respuesta1}}</ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">¿Te gustaría formar parte de la familia RWR?</ion-label>
+      <ion-input readonly>{{seguidor.data.respuesta2}}</ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">¿Te gustaría ver más conferencias?</ion-label>
+      <ion-input readonly>{{seguidor.data.respuesta3}}</ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Calificación:</ion-label>
+      <ion-input readonly>{{seguidor.data.calificacion}}</ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Comentarios:</ion-label>
+      <ion-input readonly>{{seguidor.data.comentario}}</ion-input>
+    </ion-item>
+  </div>
+</ion-content>

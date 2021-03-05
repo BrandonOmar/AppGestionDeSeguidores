@@ -1,7 +1,6 @@
 export interface DatosI{
-    $keyRegistro: string;
+    id: string;
     nombre :  string;
-    edad : string;
     estado : string;
     municipio : string;
     facebook : string;

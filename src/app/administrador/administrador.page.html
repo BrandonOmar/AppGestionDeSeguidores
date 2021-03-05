@@ -38,13 +38,18 @@
         <p>
           <ion-icon name="mail-sharp"></ion-icon> {{documentDatos.data.email}}
         </p>
+        <!-- 
+          Obtener valor de ID de Firebase
+          <h5>
+          <ion-icon name="logo-facebook"></ion-icon> {{documentDatos.idFirebase}}
+        </h5> -->
       </ion-label>
     
       <div color="black" class="item-note" item-end>
-        <button ion-button clear>
+        <button ion-button clear (click)="detalleSeguidor(documentDatos)">
           <ion-icon name="person-sharp" style="zoom:1.5"></ion-icon>
         </button>
-        <button ion-button clear>
+        <button ion-button clear (click)="deleteSeguidor(documentDatos)">
           <ion-icon name="trash" style="zoom:1.5"></ion-icon>
         </button>
       </div>

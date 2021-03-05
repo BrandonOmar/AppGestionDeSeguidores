@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { User } from '../shared/user.interface';
 import { AngularFireAuth } from '@angular/fire/auth';
 import firebase from 'firebase';
-import {AngularFirestore, AngularFirestoreDocument,AngularFirestoreCollection} from '@angular/fire/firestore'
-import { Observable, of } from 'rxjs';
+import {AngularFirestore, AngularFirestoreDocument,AngularFirestoreCollection} from '@angular/fire/firestore';
+import { Observable, of ,BehaviorSubject} from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 
@@ -20,6 +20,9 @@ export class AuthService {
 
   public user$: Observable<User>;
 
+  /**Variables para enviar datos de administrador a detalleSeguidor */
+  private objectSource = new BehaviorSubject<{}>({});
+  $getObjectSource = this.objectSource.asObservable();
 
   constructor( private afAuth: AngularFireAuth, private afs: AngularFirestore)
   { 
@@ -125,8 +128,28 @@ export class AuthService {
   }
   
   
-  public consultar(coleccion) {
+  // Administrador: Consulta y eliminación de seguidores
+
+  public consultarSeguidores(coleccion) {
     return this.afs.collection(coleccion).snapshotChanges();
   }
+  
+   public eliminarSeguidor(id:any) {
+  
+  return this.afs.collection("DatosSeguidores").doc(id).delete();
+  }
+
+  public consultarSeguidorPorId(id:any) {
+    return this.afs.collection("DatosSeguidores").doc(id).snapshotChanges();
+  }
+
+
+/** Método para enviar datos de administrador a detalleSeguidor */
+
+  sendObjectSource(data:any)
+  {
+    this.objectSource.next(data);
+  }
+
 
 }
