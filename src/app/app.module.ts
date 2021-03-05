@@ -17,10 +17,6 @@ import {AuthService} from './services/auth.service';
 
 import { Facebook } from '@ionic-native/facebook/ngx';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-//import { ToastrModule } from 'ng6-toastr-notifications'
-//import { ToastrManager } from 'ng6-toastr-notifications';
-
 
 
 //firebase config
@@ -38,7 +34,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AngularFirestoreModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NgbModule
+  
   ],
   providers: [
     Facebook,
