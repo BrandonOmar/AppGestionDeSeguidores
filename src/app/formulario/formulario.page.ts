@@ -5,6 +5,7 @@ import {FormControl, FormGroup, Validators, FormBuilder, AbstractControl} from '
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
+import { Platform } from '@ionic/angular';
 
 
 
@@ -63,12 +64,16 @@ export class FormularioPage implements OnInit {
 
   formDatosSeguidor : FormGroup;
 
+
+
   constructor(private router: Router, private service : AuthService, 
-    public alertController: AlertController, public toastController: ToastController, private navCtrl: NavController) 
+    public alertController: AlertController, public toastController: ToastController, private navCtrl: NavController, private platform:Platform) 
   {
     this.formDatosSeguidor = this.createFormGroup();
 
+
   }
+
 
   ngOnInit() {
   }
