@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {AuthService} from '../services/auth.service';
-import {FormControl, FormGroup, Validators, FormBuilder, AbstractControl} from '@angular/forms'
+import {FormControl, FormGroup, Validators, FormBuilder, AbstractControl} from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
@@ -50,8 +50,8 @@ export class FormularioPage implements OnInit {
         estado : new FormControl('',Validators.required),
         municipio : new FormControl('',Validators.required),
         facebook : new FormControl('',Validators.required),
-        email : new FormControl('',Validators.required),
-        numtelefono : new FormControl('',Validators.required),
+        email : new FormControl('',[Validators.required, Validators.email]),
+        numtelefono : new FormControl('',[Validators.required, Validators.minLength(10)]),
         escuela : new FormControl('',Validators.required),
         respuesta1 : new FormControl(''),
         respuesta2 : new FormControl(''),
@@ -80,11 +80,9 @@ export class FormularioPage implements OnInit {
 
   onSaveForm()
   {
-
     if (this.formDatosSeguidor.valid){
 
       try {
-
         this.service.guardarDatosSeguidores(this.formDatosSeguidor.value); 
         this.presentAlert();
         this.onResetForm();
@@ -92,13 +90,10 @@ export class FormularioPage implements OnInit {
       catch (error) {
         console.log('Error -> ', error)
       }
-
     }
     else{
       this.presentToast();
-      
     }
-      
   }
 
 
