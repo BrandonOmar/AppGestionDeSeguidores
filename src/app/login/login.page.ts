@@ -70,6 +70,7 @@ export class LoginPage implements OnInit {
     try {
       const user = await this.authSvc.loginGithub();
       if (user) {
+        console.log(user);
         this.navCtrl.navigateForward('/formulario');
         alert("Tu nombre es: " + user.displayName + " Tu correo es: " + user.email);
       }

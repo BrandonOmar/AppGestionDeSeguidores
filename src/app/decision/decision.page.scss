@@ -1,0 +1,22 @@
+   .card {
+     min-width: 280px;
+     min-height: 620px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 15px;
+     text-transform: uppercase;
+     letter-spacing: 1.3px;
+     font-weight: 700;
+     color: #000000;
+     background: linear-gradient(90deg, rgb(67, 165, 211) 0%, rgb(88, 243, 228) 100%);
+     border: none;
+     box-shadow: 12px 12px 24px rgba(91, 255, 239, 0.64);
+     transition: all 0.3s ease-in-out 0s;
+     cursor: pointer;
+     outline: none;
+     position: relative;
+     padding: 10px;
+     }
+
+     .facebook{
+      --background: #3b5998;
+  }

@@ -18,6 +18,10 @@ const routes: Routes = [
   },  {
     path: 'detalle-seguidor',
     loadChildren: () => import('./detalle-seguidor/detalle-seguidor.module').then( m => m.DetalleSeguidorPageModule)
+  },
+  {
+    path: 'decision',
+    loadChildren: () => import('./decision/decision.module').then( m => m.DecisionPageModule)
   }
 
 
