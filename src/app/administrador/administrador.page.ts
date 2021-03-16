@@ -65,6 +65,10 @@ export class AdministradorPage implements OnInit {
       this.router.navigate(['/detalle-seguidor']);
     }
 
+    logout()
+    {
+      this.router.navigate(['/login']);
+    }
 
     ngOnInit() {
     }
