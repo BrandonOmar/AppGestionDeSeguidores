@@ -11,14 +11,16 @@
 
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Administradores RWR
-    </ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button color="danger" (click)="logout()">Salir</ion-button>
+    </ion-buttons>
+    <ion-title>Administradores RWR</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [scrollEvents]="true">
   <div class="form-container">
+    
     <img class="icon" src="assets/icon/image-rwr.jpeg" width="1000" height="250">
 
     <br>

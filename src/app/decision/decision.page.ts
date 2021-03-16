@@ -23,4 +23,9 @@ export class DecisionPage implements OnInit {
       location.href = "https://www.facebook.com/somosrwr";
     }
 
+    logout()
+    {
+      this.router.navigate(['/login']);
+    }
+
 }

@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
     try {
       const user = await this.authSvc.loginGoogle();
       if (user) {
-        this.navCtrl.navigateForward('/formulario');
+        this.navCtrl.navigateForward('/decision');
       }
     } catch (error) {
       console.log("Error ->", error);
@@ -43,7 +43,7 @@ export class LoginPage implements OnInit {
     try {
       const user = await this.authSvc.loginTwitter();
       if (user) {
-        this.navCtrl.navigateForward('/formulario');
+        this.navCtrl.navigateForward('/decision');
         alert("Tu nombre es: " + user.displayName + " Tu correo es: " + user.email);
       }
     } catch (error) {
@@ -56,7 +56,7 @@ export class LoginPage implements OnInit {
     try {
       const user = await this.authSvc.loginFacebook();
       if (user) {
-        this.navCtrl.navigateForward('/formulario');
+        this.navCtrl.navigateForward('/decision');
         alert("Tu nombre es: " + user.displayName + " Tu correo es: " + user.email);
       }
     } catch (error) {
@@ -71,22 +71,12 @@ export class LoginPage implements OnInit {
       const user = await this.authSvc.loginGithub();
       if (user) {
         console.log(user);
-        this.navCtrl.navigateForward('/formulario');
+        this.navCtrl.navigateForward('/decision');
         alert("Tu nombre es: " + user.displayName + " Tu correo es: " + user.email);
       }
     } catch (error) {
       console.log("Error ->", error);
     }
-  }
-
-
-  redirectUser(isVerified: boolean) {
-
-    if (isVerified) {
-      // location.href = "https://www.facebook.com/VolverASonarAC/?hc_ref=ARRwwR7nGp65IcQDKrJw5b4ig2EJrqJMj1o0j9CaoYgb_VYPoKU-8Cjz2PtnvFgqgjg&fref=nf&__xts__[0]=68.ARB_Kz7eNWaw93EBas2BkpMQSFgnnb2smvaqyWeR46Bm2WtHkn3LXPj7ZRiGXp4O7mgxYJ2BaCR4P5HosoFFPtG6m7nq9d6uHeDO018xYwv88kGRk39tYxLlA1elMhL06BYASJ_IMjz_uEYentXV3OIUFmXmVwOj8osnxIdFUTovPmSUIf0hv-7uWDUCAA4xXeWc-klxSFXKdhawVK1bCSvbFCEtpU3Psvx6XA2zeN0NSI5ZOJpUPph8YKRAfuRUgqsQECiB_ST6S39bhUoKpHdwmag9gG--M2IK-zbu2UQw45MPPFMcAFHZR1K33MArzeo&__tn__=kC-R";
-      location.href = "https://www.facebook.com/somosrwr";
-    }
-
   }
 
 }
