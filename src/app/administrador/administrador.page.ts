@@ -5,7 +5,7 @@ import {FormControl, FormGroup} from '@angular/forms'
 import { AlertController } from '@ionic/angular';
 import {AngularFirestore, AngularFirestoreDocument,AngularFirestoreCollection} from '@angular/fire/firestore'
 import {DatosI} from '../models/datosSeguidor.interface';
-
+import { NavController } from '@ionic/angular';
 
 
 
@@ -18,6 +18,7 @@ import {DatosI} from '../models/datosSeguidor.interface';
 export class AdministradorPage implements OnInit {
 
   item: any;
+  
 
   arrayColeccionDatos: any = [{
     idFirebase: "",
@@ -30,7 +31,7 @@ export class AdministradorPage implements OnInit {
 
 
     constructor(private db: AngularFirestore, private service: AuthService, 
-      private alert: AlertController, private router:Router){
+      private alert: AlertController, private router:Router, private navCtrl: NavController){
 
       this.obtenerListaSeguidores();
     }
@@ -49,11 +50,41 @@ export class AdministradorPage implements OnInit {
     }
 
 
-   deleteSeguidor(item:any) : void
-    {
-       if (window.confirm('¿Está seguro de eliminar a éste seguidor?')) {
-         this.service.eliminarSeguidor(item.idFirebase)
-       }
+   //deleteSeguidor(item:any) : void
+  //  {
+     //  if (window.confirm('¿Está seguro de eliminar a éste seguidor?')) {
+      //   this.service.eliminarSeguidor(item.idFirebase)
+      // }
+   // }
+
+    async deleteSeguidor(item:any) {
+      const alert =  await this.alert.create({
+        header: '¿Está seguro de eliminar a éste seguidor?',
+        message: 'Eliminación definitiva',
+        buttons: [
+          {
+            text: 'Eliminar',
+            role: 'eliminar',
+            cssClass: 'btn-alert',
+            handler: () => {
+              this.service.eliminarSeguidor(item.idFirebase)
+            }
+            
+          },
+          {
+            text: 'Cancelar',
+            role: 'cancelar',
+            cssClass: 'btn-alert',
+            handler: () => {
+              this.navCtrl.navigateForward('/administrador');
+            }
+            
+          }
+        ]
+      });
+      await alert.present();
+      this.navCtrl.navigateForward('/administrador');
+
     }
 
 

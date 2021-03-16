@@ -27,16 +27,16 @@
     <ion-item  style="padding-top: 8px;" *ngFor="let documentDatos of arrayColeccionDatos" class="user-list">
       <ion-label>
         <h5>
-          <ion-icon name="person"></ion-icon> {{documentDatos.data.nombre}}
+          <ion-icon name="person-circle-outline"></ion-icon> {{documentDatos.data.nombre}}
         </h5>
         <p>
-          <ion-icon name="call"></ion-icon> {{documentDatos.data.numtelefono}}
+          <ion-icon name="call-outline"></ion-icon> {{documentDatos.data.numtelefono}}
         </p>
         <h5>
-          <ion-icon name="logo-facebook"></ion-icon> {{documentDatos.data.facebook}}
+          <ion-icon name="logo-facebook" color="primary"></ion-icon> {{documentDatos.data.facebook}}
         </h5>
         <p>
-          <ion-icon name="mail-sharp"></ion-icon> {{documentDatos.data.email}}
+          <ion-icon name="mail-unread-outline"></ion-icon> {{documentDatos.data.email}}
         </p>
         <!-- 
           Obtener valor de ID de Firebase
@@ -47,10 +47,10 @@
     
       <div color="black" class="item-note" item-end>
         <button ion-button clear (click)="detalleSeguidor(documentDatos)">
-          <ion-icon name="person-sharp" style="zoom:1.5"></ion-icon>
+          <ion-icon name="person-outline" style="zoom:1.5"></ion-icon>
         </button>
         <button ion-button clear (click)="deleteSeguidor(documentDatos)">
-          <ion-icon name="trash" style="zoom:1.5"></ion-icon>
+          <ion-icon name="close-circle-outline" style="zoom:1.5"></ion-icon>
         </button>
       </div>
     </ion-item>
