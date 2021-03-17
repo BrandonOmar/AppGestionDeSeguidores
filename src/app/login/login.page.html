@@ -18,7 +18,7 @@
       <ion-label color="dark" position="floating"> Contraseña <span class="text-danger">*</span></ion-label>
       <ion-input [(ngModel)]="password" type="password" name="password" required="true"></ion-input>
     </ion-item>
-    <ion-button class="ion-margin-top" type="submit" expand="block">Entrar</ion-button>
+    <ion-button class="ion-margin-top" type="submit" expand="block" (click)="admin()">Entrar</ion-button>
   </form>
 
   <ion-grid>

@@ -79,4 +79,10 @@ export class LoginPage implements OnInit {
     }
   }
 
+
+  admin(){
+    this.navCtrl.navigateForward('/administrador');
+  }
+
+
 }
