@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title class="ion-text-center">Iniciar sesión</ion-title>
+  <ion-toolbar>
+    <ion-title class="title" color="primary">Iniciar sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,7 +9,7 @@
   <img class="icon" src="assets/icon/vas.png" width="700" height="150">
 
   <form autocomplete="off">
-    <ion-item></ion-item>
+    <br>
     <ion-item>
       <ion-label color="dark" position="floating"> Correo electrónico <span class="text-danger">*</span></ion-label>
       <ion-input type="text" [(ngModel)]="email" name="email" required="true"></ion-input>
@@ -20,39 +20,38 @@
     </ion-item>
     <ion-button class="ion-margin-top" type="submit" expand="block">Entrar</ion-button>
   </form>
+<br>
+<br>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col size="3">
-        <ion-button class="google" (click)="onLoginGoogle(email,password)">
-          <ion-icon name="logo-google"></ion-icon>
-        </ion-button>
+<ion-grid>
+    <ion-row class="justify-content-around align-items-center">
+      <ion-col size="2">
+        <img class="icon-center" src="assets/icon/google-mas.png" width="40" height="40" 
+        class="google" (click)="onLoginGoogle(email,password)">        
       </ion-col>
 
-          <ion-col size="3">
-            <ion-button class="facebook" (click)="onLoginFacebook(email,password)">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </ion-button>
+          <ion-col size="2">
+            <img class="icon-center" src="assets/icon/facebook.png" width="40" height="40" 
+            class="facebook" (click)="onLoginFacebook(email,password)">
           </ion-col>
 
-      <ion-col size="3">
-        <ion-button class="twitter" (click)="onLoginTwitter(email,password)">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </ion-button>
+      <ion-col size="2">
+        <img class="icon-center" src="assets/icon/twitter.png" width="40" height="40" 
+        class="twitter" (click)="onLoginTwitter(email,password)">
       </ion-col>
 
-      <ion-col size="3">
-        <ion-button class="github" (click)="onLoginGithub()">
-          <ion-icon name="logo-github"></ion-icon>
-        </ion-button>
+      <ion-col size="2">
+        <img class="icon-center" src="assets/icon/github.png" width="40" height="40" 
+        class="github" (click)="onLoginGithub()">
       </ion-col>
-
-
     </ion-row>
   </ion-grid>
 
+  <div class="ion-text-center ion-margin-top text-medium">
+    <ion-label color="medium"><small>Si continúas, aceptas las Condiciones de servicio y la Política de privacidad de RWR</small></ion-label>
+  </div>
   <div class="ion-text-center ion-margin-top">
-    <a routerLink="/registro"><small>Olvidé mi Contraseña</small></a>
+    <a routerLink="/registro"><small>¿Olvidaste tu contraseña?</small></a>
   </div>
 
 </ion-content>

@@ -125,5 +125,10 @@ export class FormularioPage implements OnInit {
     toast.present();
   }
 
+  logout()
+    {
+      this.router.navigate(['/login']);
+    }
+
 
 }

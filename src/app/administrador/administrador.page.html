@@ -12,9 +12,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="secondary">
-      <ion-button color="danger" (click)="logout()">Salir</ion-button>
+      <ion-button color="light" (click)="logout()"> Salir</ion-button>
     </ion-buttons>
-    <ion-title>Administradores RWR</ion-title>
+    <ion-title class="title">Administradores RWR</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -48,11 +48,11 @@
       </ion-label>
     
       <div color="black" class="item-note" item-end>
-        <button ion-button clear (click)="detalleSeguidor(documentDatos)">
-          <ion-icon name="person-outline" style="zoom:1.5"></ion-icon>
+        <button color="light" ion-button clear (click)="detalleSeguidor(documentDatos)">
+          <ion-icon name="person" style="zoom:1.5"></ion-icon>
         </button>
         <button ion-button clear (click)="deleteSeguidor(documentDatos)">
-          <ion-icon name="close-circle-outline" style="zoom:1.5"></ion-icon>
+          <ion-icon name="trash" style="zoom:1.5"></ion-icon>
         </button>
       </div>
     </ion-item>

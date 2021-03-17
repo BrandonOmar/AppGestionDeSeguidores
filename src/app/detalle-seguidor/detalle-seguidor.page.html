@@ -11,10 +11,10 @@
 
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="administrador"></ion-back-button>
+    <ion-buttons slot="secondary">
+      <ion-button color="light" (click)="logout()"> Salir</ion-button>
     </ion-buttons>
-    <ion-title>
+    <ion-title class="title">
       Detalles de Seguidor
     </ion-title>
   </ion-toolbar>
@@ -23,11 +23,7 @@
 <ion-content [scrollEvents]="true">
   <div class="form-container">
     <div>
-<<<<<<< HEAD
       <img style="width: 150px; height: 150px; margin-left: 85px;" src="https://iconfair.com/wp-content/uploads/2020/08/1-23-2.png">
-=======
-      <img style="width: 150px; height: 150px; margin-left: 115px;" src="https://img.icons8.com/color/452/user-group-man-woman.png">
->>>>>>> 35e7bb071740f4d26a241e602af42bd4e285d976
     </div>
 
     <h2 class="nombre" style="text-align: center;">
