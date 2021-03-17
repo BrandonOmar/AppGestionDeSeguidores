@@ -12,9 +12,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="secondary">
-      <ion-button color="danger" (click)="logout()">Salir</ion-button>
+      <ion-button color="light" (click)="logout()"> Salir</ion-button>
     </ion-buttons>
-    <ion-title>Administradores RWR</ion-title>
+    <ion-title class="title">Administradores RWR</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -29,16 +29,16 @@
     <ion-item  style="padding-top: 8px;" *ngFor="let documentDatos of arrayColeccionDatos" class="user-list">
       <ion-label>
         <h5>
-          <ion-icon name="person"></ion-icon> {{documentDatos.data.nombre}}
+          <ion-icon name="person-circle-outline"></ion-icon> {{documentDatos.data.nombre}}
         </h5>
         <p>
-          <ion-icon name="call"></ion-icon> {{documentDatos.data.numtelefono}}
+          <ion-icon name="call-outline"></ion-icon> {{documentDatos.data.numtelefono}}
         </p>
         <h5>
-          <ion-icon name="logo-facebook"></ion-icon> {{documentDatos.data.facebook}}
+          <ion-icon name="logo-facebook" color="primary"></ion-icon> {{documentDatos.data.facebook}}
         </h5>
         <p>
-          <ion-icon name="mail-sharp"></ion-icon> {{documentDatos.data.email}}
+          <ion-icon name="mail-unread-outline"></ion-icon> {{documentDatos.data.email}}
         </p>
         <!-- 
           Obtener valor de ID de Firebase
@@ -48,8 +48,8 @@
       </ion-label>
     
       <div color="black" class="item-note" item-end>
-        <button ion-button clear (click)="detalleSeguidor(documentDatos)">
-          <ion-icon name="person-sharp" style="zoom:1.5"></ion-icon>
+        <button color="light" ion-button clear (click)="detalleSeguidor(documentDatos)">
+          <ion-icon name="person" style="zoom:1.5"></ion-icon>
         </button>
         <button ion-button clear (click)="deleteSeguidor(documentDatos)">
           <ion-icon name="trash" style="zoom:1.5"></ion-icon>

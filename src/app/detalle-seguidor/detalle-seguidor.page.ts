@@ -5,7 +5,7 @@ import {FormControl, FormGroup} from '@angular/forms'
 import { AlertController } from '@ionic/angular';
 import {AngularFirestore, AngularFirestoreDocument,AngularFirestoreCollection} from '@angular/fire/firestore'
 import {DatosI} from '../models/datosSeguidor.interface';
-
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-detalle-seguidor',
@@ -16,7 +16,7 @@ export class DetalleSeguidorPage implements OnInit {
 
   seguidor: any;
 
-  constructor(private db: AngularFirestore, private service: AuthService, private alert: AlertController) { }
+  constructor(private db: AngularFirestore, private service: AuthService, private alert: AlertController, private router:Router, private navCtrl: NavController) { }
 
 
   ngOnInit() {
@@ -29,6 +29,11 @@ export class DetalleSeguidorPage implements OnInit {
     }).unsubscribe();
 
   }
+
+  logout()
+    {
+      this.router.navigate(['/administrador']);
+    }
 
 
 }
