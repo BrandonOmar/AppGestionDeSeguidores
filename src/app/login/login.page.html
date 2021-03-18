@@ -11,14 +11,14 @@
   <form autocomplete="off">
     <br>
     <ion-item>
-      <ion-label color="dark" position="floating"> Correo electrónico <span class="text-danger">*</span></ion-label>
-      <ion-input type="text" [(ngModel)]="email" name="email" required="true"></ion-input>
+      <ion-input placeholder="Correo electrónico" clearInput value="clear me" type="text" [(ngModel)]="email" name="email" required="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label color="dark" position="floating"> Contraseña <span class="text-danger">*</span></ion-label>
-      <ion-input [(ngModel)]="password" type="password" name="password" required="true"></ion-input>
+      <ion-input clearInput value="clear me" [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Password" required="true"></ion-input>
+      <ion-icon slot="end" [name]="passwordToggleIcon" (click)="togglePassword()"></ion-icon>
     </ion-item>
-    <ion-button class="ion-margin-top" type="submit" expand="block" (click)="admin()">Entrar</ion-button>
+    
+    <ion-button class="ion-margin-top" type="submit" expand="block" (click)="loginAdmin(email,password)">Entrar</ion-button>
   </form>
 <br>
 <br>

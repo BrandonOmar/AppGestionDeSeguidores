@@ -50,6 +50,9 @@ export class AdministradorPage implements OnInit {
     }
 
 
+
+
+
    //deleteSeguidor(item:any) : void
   //  {
      //  if (window.confirm('¿Está seguro de eliminar a éste seguidor?')) {
