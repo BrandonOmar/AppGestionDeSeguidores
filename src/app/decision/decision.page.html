@@ -1,28 +1,40 @@
-<div style="text-align: center;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <ion-img style="margin-left: 60%; height: 50px; margin-top: 5px;" 
-  src="https://lh3.googleusercontent.com/proxy/CMKxcRLpFSDOn_KrYQnV88gcitCikmmEuae2HSRLfexX-5CfKp9E-gChxLtfa-DYl5E5TCZmqIuiKeZquv9TJj44MK3qIUlP"
-  (click)="logout()"></ion-img>
+</head>
 
-</div>
-
-<div style="text-align: center;">
-
-  <ion-img style="text-align: center; height: 80px; margin-top: 80px;" 
-  src="https://pngimage.net/wp-content/uploads/2018/06/formulario-icono-png.png"></ion-img>
-
-</div>
-
-<div class="wrap" style="margin-top: -60px;">
-  <button class="button" (click)="formulario()">Contestar Formulario</button>
-</div>
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button color="danger" (click)="logout()"> Salir</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 
-<div style="text-align: center;">
- <ion-img style="text-align: center; height: 90px; margin-top: 80px;" 
-  src="assets/icon/RWR.PNG"></ion-img>
-</div>
+<ion-content [scrollEvents]="true" style="max-width: 550px; max-height: 700px; align-self: center;">
+  
+    <h2 style="align-self: center; align-tracks: center; text-align: center;">Forma parte de la familia RWR</h2>
+    
+    <br>
 
-<div class="wrap">
-  <button class="button" (click)="pageFacebook()" style="margin-top: -110px;">Ir a la página <br> de Facebook de RWR</button>
-</div>
+  <ion-item style="max-width: 350px; margin-left: 25px;">
+      <button type="button" class="btn btn-primary btn-sm" (click)="formulario()">Contestar Formulario</button>
+     <img class="icon" src="assets/icon/fom.png" width="220" height="180"> 
+    </ion-item> 
+    
+    <br>
+
+    <ion-item style="max-width: 350px; margin-left: 25px;">
+      <button type="button" class="btn btn-primary btn-sm" (click)="pageFacebook()">Ir a la página de Facebook de RWR</button>
+      <img class="icon" src="assets/icon/meGusta.png" width="120" height="180">
+    </ion-item> 
+
+
+</ion-content>
