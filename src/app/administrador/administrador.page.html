@@ -10,12 +10,19 @@
 </head>
 
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-buttons slot="secondary">
-      <ion-button color="light" (click)="logout()"> Salir</ion-button>
+      <ion-button color="danger" (click)="logout()"> Salir</ion-button>
     </ion-buttons>
     <ion-title class="title">Administradores RWR</ion-title>
   </ion-toolbar>
+
+  <ion-toolbar color="dark">
+    <ion-searchbar placeholder="Buscar seguidor..." 
+    animated (ionChange)="buscarSeguidor($event)">
+    </ion-searchbar>
+  </ion-toolbar>
+
 </ion-header>
 
 <ion-content [scrollEvents]="true">
@@ -26,7 +33,7 @@
     <br>
     <br>
 
-    <ion-item  style="padding-top: 8px;" *ngFor="let documentDatos of arrayColeccionDatos" class="user-list">
+    <ion-item  style="padding-top: 8px;" *ngFor="let documentDatos of arrayColeccionDatos | filtro:textoBuscar " class="user-list">
       <ion-label>
         <h5>
           <ion-icon name="person-circle-outline"></ion-icon> {{documentDatos.data.nombre}}

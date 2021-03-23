@@ -7,9 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { AdministradorPageRoutingModule } from './administrador-routing.module';
 
 import { AdministradorPage } from './administrador.page';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   imports: [
+    PipesModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,

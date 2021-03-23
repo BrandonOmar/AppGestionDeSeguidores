@@ -19,7 +19,9 @@ export class AdministradorPage implements OnInit {
 
   item: any;
   
-
+  seguidores : DatosI[] = [];
+  textoBuscar = '';
+  
   arrayColeccionDatos: any = [{
     idFirebase: "",
     data: {} as DatosI
@@ -33,7 +35,24 @@ export class AdministradorPage implements OnInit {
     constructor(private db: AngularFirestore, private service: AuthService, 
       private alert: AlertController, private router:Router, private navCtrl: NavController){
 
-      this.obtenerListaSeguidores();
+      // this.obtenerListaSeguidores();
+     
+      this.service.consultarSeguidores("DatosSeguidores").subscribe((resultadoConsultaDatos) => {
+        this.arrayColeccionDatos = [];
+        resultadoConsultaDatos.forEach((datos: any) => {
+          this.arrayColeccionDatos.push({
+            idFirebase: datos.payload.doc.id,
+            data: datos.payload.doc.data()
+          });
+        })
+      });
+
+    }
+
+
+    buscarSeguidor(event){
+      const texto = event.target.value;
+      this.textoBuscar = texto;
     }
 
 
@@ -48,6 +67,9 @@ export class AdministradorPage implements OnInit {
         })
       });
     }
+
+
+
 
 
    //deleteSeguidor(item:any) : void
