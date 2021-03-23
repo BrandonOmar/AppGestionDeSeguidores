@@ -132,6 +132,11 @@ export class AuthService {
   public consultarSeguidores(coleccion) {
     return this.afs.collection(coleccion).snapshotChanges();
   }
+
+  public seguidores() {
+    return this.afs.collection<DatosI[]>("DatosSeguidores").snapshotChanges();
+  }
+
   
    public eliminarSeguidor(id:any) {
   
