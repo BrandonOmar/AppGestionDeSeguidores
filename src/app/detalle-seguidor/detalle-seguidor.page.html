@@ -10,11 +10,11 @@
 </head>
 
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="new-background-color">
     <ion-buttons slot="secondary">
-      <ion-button color="light" (click)="logout()">Salir</ion-button>
+      <ion-button class="tittle" (click)="logout()">Salir</ion-button>
     </ion-buttons>
-    <ion-title class="title">
+    <ion-title class="tittle">
       Detalles de Seguidor
     </ion-title>
   </ion-toolbar>
@@ -33,14 +33,13 @@
      <br>
 
      <ion-item>
-      <ion-label position="stacked">Estado:</ion-label>
-      <ion-input readonly>{{seguidor.data.estado}}</ion-input>
+      <ion-label>Estado: {{seguidor.data.estado}}  </ion-label>
+      
     </ion-item>
     <br>
     
     <ion-item>
-      <ion-label position="stacked">Municipio:</ion-label>
-      <ion-input readonly>{{seguidor.data.municipio}}</ion-input>
+      <ion-label>Municipio: {{seguidor.data.municipio}}</ion-label>
     </ion-item>
     <br>
     
@@ -51,14 +50,12 @@
     <br>
     
     <ion-item>
-      <ion-label position="stacked">Correo electrónico:</ion-label>
-      <ion-input readonly>{{seguidor.data.email}}</ion-input>
+      <ion-label >Correo electrónico: {{seguidor.data.email}}</ion-label>
     </ion-item>
     <br>
     
     <ion-item>
-      <ion-label position="stacked">Número de teléfono:</ion-label>
-      <ion-input readonly>{{seguidor.data.numtelefono}}</ion-input>
+      <ion-label >Número de teléfono: {{seguidor.data.numtelefono}}</ion-label>
     </ion-item>
     <br>
     

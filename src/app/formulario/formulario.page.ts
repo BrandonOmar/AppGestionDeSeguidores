@@ -22,6 +22,10 @@ export class FormularioPage implements OnInit {
   //Get value on ionSelect on IonRadio item
   selectedRadioItem:any;
 
+  numEstrellas = '';
+   
+
+
   radio_list = [
     {
       id: '1',
@@ -45,6 +49,7 @@ export class FormularioPage implements OnInit {
 
   createFormGroup()
   {
+    
     return new FormGroup(
       {
         nombre : new FormControl('',Validators.required),
@@ -83,22 +88,27 @@ export class FormularioPage implements OnInit {
     this.formDatosSeguidor.reset();
   }
 
+  addValue(cal : string): void {
+    this.numEstrellas = cal;
+  }
+
   onSaveForm()
   {
-    if (this.formDatosSeguidor.valid){
+     if (this.formDatosSeguidor.valid){
 
-      try {
-        this.service.guardarDatosSeguidores(this.formDatosSeguidor.value); 
-        this.presentAlert();
-        this.onResetForm();
-      } 
-      catch (error) {
-        console.log('Error -> ', error)
-      }
-    }
-    else{
-      this.presentToast();
-    }
+       try {
+         this.service.guardarDatosSeguidores(this.formDatosSeguidor.value, this.numEstrellas); 
+         this.presentAlert();
+         this.onResetForm();
+       } 
+       catch (error) {
+         console.log('Error -> ', error)
+       }
+     }
+     else{
+       this.presentToast();
+     }
+    
   }
 
 

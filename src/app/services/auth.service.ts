@@ -40,8 +40,9 @@ export class AuthService {
     );
   }
 
-  guardarDatosSeguidores(newDatosSeguidor : DatosI): void
+  guardarDatosSeguidores(newDatosSeguidor : DatosI, estrellas : string): void
   {
+    newDatosSeguidor.calificacion = estrellas;
     this.datosCollection.add(newDatosSeguidor);
   }
 

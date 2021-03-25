@@ -6,15 +6,16 @@
   <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar class="new-background-color">
     <ion-buttons slot="secondary">
       <ion-button color="light" (click)="logout()"> Salir</ion-button>
     </ion-buttons>
-    <ion-title class="title">
+    <ion-title >
       RWR Rockwell Road
     </ion-title>
   </ion-toolbar>
@@ -187,80 +188,39 @@
       </ion-list>
       <br>
 
+      <ion-list style="height: 120px;">
       <ion-item>
         <label>¿Qué tanto recomendarías esta conferencia a otras escuelas?</label>
       </ion-item>
-
-      <ion-item>
-        <ion-list>
-          <ion-radio-group value="calificacion" formControlName="calificacion">
-            <ion-item>
-
-
-              <ion-radio value="Excelente" color="success" checked></ion-radio>
-              <ion-label style="margin-left: 10px;">
-                <ion-icon name="star"> </ion-icon>
-                <ion-icon name="star"> </ion-icon>
-                <ion-icon name="star"> </ion-icon>
-                <ion-icon name="star"> </ion-icon>
-                <ion-icon name="star"> </ion-icon>
-              </ion-label>
-            </ion-item>
-
-            <ion-item>
-
-              <ion-radio value="Muy bueno" color="success" checked></ion-radio>
-              <ion-label style="margin-left: 10px;">
-                <ion-icon name="star"> </ion-icon>
-                <ion-icon name="star"> </ion-icon>
-                <ion-icon name="star"> </ion-icon>
-                <ion-icon name="star"> </ion-icon>
-              </ion-label>
-            </ion-item>
-
-            <ion-item>
-
-              <ion-radio value="Bueno" color="secondary" checked></ion-radio>
-              <ion-label style="margin-left: 10px;">
-                <ion-icon name="star"> </ion-icon>
-                <ion-icon name="star"> </ion-icon>
-                <ion-icon name="star"> </ion-icon>
-              </ion-label>
-            </ion-item>
-
-            <ion-item>
-
-              <ion-radio value="Regular" color="warning" checked></ion-radio>
-              <ion-label style="margin-left: 10px;">
-                <ion-icon name="star"> </ion-icon>
-                <ion-icon name="star"> </ion-icon>
-              </ion-label>
-            </ion-item>
-
-            <ion-item>
-
-              <ion-radio value="Malo" color="danger" checked></ion-radio>
-              <ion-label style="margin-left: 10px;">
-                <ion-icon name="star"> </ion-icon>
-              </ion-label>
-            </ion-item>
-          </ion-radio-group>
-        </ion-list>
-      </ion-item>
-
       <br>
+      <ion-item class="rating">
+        <input value="5" type="radio" name="star" id="star5" (click)="addValue('Excelente')">
+        <label for="star5"></label>
+        <input value="4" type="radio" name="star" id="star4" (click)="addValue('Muy bueno')">
+        <label for="star4"></label>
+        <input value="3" type="radio" name="star" id="star3" (click)="addValue('Bueno')">
+        <label for="star3"></label>
+        <input value="2" type="radio" name="star" id="star2" (click)="addValue('Regular')">
+        <label for="star2"></label>
+        <input value="1" type="radio" name="star" id="star1" (click)="addValue('Malo')">
+        <label for="star1"></label>
+      </ion-item>
+    </ion-list>
+      <br>
+      
+      <ion-list>
       <ion-item>
-        <ion-label>Escribe</ion-label>
         <textarea type="textarea" formControlName="comentario" placeholder="Comentarios:"></textarea>
       </ion-item>
       <span
-        *ngIf="this.formDatosSeguidor.get('comentario').errors?.required && this.formDatosSeguidor.get('comentario').touched"
-        class="badge badge-danger">
-        Este campo debe ser llenado
-      </span>
+      *ngIf="this.formDatosSeguidor.get('comentario').errors?.required && this.formDatosSeguidor.get('comentario').touched"
+      class="badge badge-danger">
+      Este campo debe ser llenado
+    </span>
+    </ion-list>
+     
       <br>
 
-      <br>
       <button type="submit" class="btn-send" expand="block">Enviar</button>
     </form>
 
