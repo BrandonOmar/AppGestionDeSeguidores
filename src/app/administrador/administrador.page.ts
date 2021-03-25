@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {AuthService} from '../services/auth.service';
-import {FormControl, FormGroup} from '@angular/forms'
 import { AlertController } from '@ionic/angular';
-import {AngularFirestore, AngularFirestoreDocument,AngularFirestoreCollection} from '@angular/fire/firestore'
+import {AngularFirestore} from '@angular/fire/firestore'
 import {DatosI} from '../models/datosSeguidor.interface';
 import { NavController } from '@ionic/angular';
 

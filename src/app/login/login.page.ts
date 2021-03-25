@@ -102,7 +102,6 @@ export class LoginPage implements OnInit {
       const user = await this.authSvc.loginTwitter();
       if (user) {
         this.navCtrl.navigateForward('/decision');
-        alert("Tu nombre es: " + user.displayName + " Tu correo es: " + user.email);
       }
     } catch (error) {
       console.log("Error ->", error);
@@ -115,7 +114,6 @@ export class LoginPage implements OnInit {
       const user = await this.authSvc.loginFacebook();
       if (user) {
         this.navCtrl.navigateForward('/decision');
-        alert("Tu nombre es: " + user.displayName + " Tu correo es: " + user.email);
       }
     } catch (error) {
       console.log("Error ->", error);
@@ -130,7 +128,6 @@ export class LoginPage implements OnInit {
       if (user) {
         console.log(user);
         this.navCtrl.navigateForward('/decision');
-        alert("Tu nombre es: " + user.displayName + " Tu correo es: " + user.email);
       }
     } catch (error) {
       console.log("Error ->", error);

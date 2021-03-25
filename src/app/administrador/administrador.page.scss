@@ -1,5 +1,5 @@
 .title {
-  background-color: #26A69A;
+  color: #ffffff;
 }
 
 .header .col {
@@ -25,7 +25,7 @@
       max-width: 500px;
       padding: 16px;
       margin: 10px auto;
-      background: #F5F5F5;
+      background: #b2ffee;
   }
   
   .form-container h1 {
@@ -113,4 +113,16 @@
 .my-custom-class {
   
   --background: #000000;
+}
+
+.new-background-color{
+  --background: #25ac9e;
+}
+
+.new-background-color2{
+  --background: #03bac0;
+}
+
+.tittle {
+  --color: #ffffff;
 }
