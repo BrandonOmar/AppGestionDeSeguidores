@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Iniciar sesión</ion-title>
+    <ion-title class="icon-center">Iniciar sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,6 +17,9 @@
 </ion-col>
     </ion-row>
 
+    <br>
+    <br>
+
   <form autocomplete="off">
     <br>
     <ion-item>
@@ -26,6 +29,7 @@
       <ion-input clearInput value="clear me" [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Password" required="true"></ion-input>
       <ion-icon slot="end" [name]="passwordToggleIcon" (click)="togglePassword()"></ion-icon>
     </ion-item>
+    <br>
     
     <ion-button class="ion-margin-top" type="submit" expand="block" (click)="loginAdmin(email,password)">Entrar</ion-button>
   </form>

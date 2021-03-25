@@ -1,24 +1,27 @@
+
+
 ion-content{
 
-  --background: radial-gradient(circle at 94.9% 75.92%, #a3ffff 0, #86ffff 10%, #6affff 20%, #50ffff 30%, 
-  #3dffff 40%, #35fbfb 50%, #37e0e8 60%, #3bc8d7 70%, #40b3c6 80%, #45a2b8 90%, #4894ac 100%);
+  --background: radial-gradient(circle at 94.9% 75.92%, #80CBC4 0, #4DB6AC 10%, #26A69A 20%, #009688 30%, 
+  #00897B 40%, #00796B 50%, #00695C 60%, #009688 70%, #009688 80%, #009688 90%, #009688 100%);
 }
 
 ion-item{
 
-  --background:radial-gradient(circle at 24.08% 5.1%, #a3ffff 0, #86ffff 10%, #6affff 20%, #50ffff 30%, 
-  #3dffff 40%, #35fbfb 50%, #37e0e8 60%, #3bc8d7 70%, #40b3c6 80%, #45a2b8 90%, #4894ac 100%);
+  --background: radial-gradient(circle at 94.9% 75.92%, #80CBC4 0, #4DB6AC 10%, #80CBC4 20%, #80CBC4 30%, 
+  #80CBC4 40%, #80CBC4 50%, #80CBC4 60%, #80CBC4 70%, #80CBC4 80%, #009688 90%, #00695C 100%);
 }
 
 h2 {
   margin-top: 15px;
-  font-family: Tahoma, Geneva, sans-serif;
+  font-family: "Serif";
   font-size: 25px;
   font-weight: bold;
   text-align: center;
   letter-spacing: 2.2pt;
   word-spacing: -2.2pt;
   line-height: 1.2;
+  color: #ffff;
   
 }
 
