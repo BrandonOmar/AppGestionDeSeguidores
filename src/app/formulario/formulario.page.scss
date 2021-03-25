@@ -112,8 +112,7 @@
 
 .rating label:before{
   
-  content: '\f005';
-  font-family: fontAwesome;
+  content: '★';
   position: relative;
   display: block;
   font-size: 40px;
@@ -122,8 +121,7 @@
 
 .rating label:after{
   
-  content: '\f005';
-  font-family: fontAwesome;
+  content: '★';
   position: absolute;
   display: block;
   font-size: 40px;
