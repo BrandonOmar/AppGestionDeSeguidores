@@ -32,67 +32,70 @@
     
      <br>
 
-     <ion-item>
-      <ion-label>Estado: {{seguidor.data.estado}}  </ion-label>
-      
-    </ion-item>
-    <br>
+     <div class="form-group">
+      <label style="margin-left: 6px;" for="exampleInputEmail1">Estado: </label>
+      <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.estado}}
+      style="border-color: rgb(0, 16, 109);">
+    </div>
     
-    <ion-item>
-      <ion-label>Municipio: {{seguidor.data.municipio}}</ion-label>
-    </ion-item>
-    <br>
+    <div class="form-group">
+      <label style="margin-left: 6px;" for="exampleInputEmail1">Municipio: </label>
+      <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.municipio}}
+      style="border-color:rgb(0, 16, 109);">
+    </div>
     
-    <ion-item>
-      <ion-label position="stacked">Facebook:</ion-label>
-      <ion-input readonly>{{seguidor.data.facebook}}</ion-input>
-    </ion-item>
-    <br>
+    <div class="form-group">
+      <label style="margin-left: 6px;" for="exampleInputEmail1">Facebook: </label>
+      <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.facebook}}
+      style="border-color: rgb(0, 16, 109);">
+    </div>
     
-    <ion-item>
-      <ion-label >Correo electrónico: {{seguidor.data.email}}</ion-label>
-    </ion-item>
-    <br>
+    <div class="form-group">
+      <label style="margin-left: 6px;" for="exampleInputEmail1">Correo Electrónico: </label>
+      <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.email}}
+      style="border-color: rgb(255, 0, 0);">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Número de teléfono: </label>
+      <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.numtelefono}}
+      style="border-color: rgb(255, 0, 0);">
+    </div>
     
-    <ion-item>
-      <ion-label >Número de teléfono: {{seguidor.data.numtelefono}}</ion-label>
-    </ion-item>
-    <br>
-    
-    <ion-item>
-      <ion-label position="stacked">Escuela de procedencia:</ion-label>
-      <ion-input readonly>{{seguidor.data.escuela}}</ion-input>
-    </ion-item>
-    <br>
-    
-    <ion-item>
-      <ion-label position="stacked" class="ion-text-wrap">¿Te gustaría recibir nuestras promociones, ofertas o sorteos de RWR?</ion-label>
-      <ion-input readonly>{{seguidor.data.respuesta1}}</ion-input>
-    </ion-item>
-    <br>
-    
-    <ion-item>
-      <ion-label position="stacked" class="ion-text-wrap">¿Te gustaría formar parte de la familia RWR?</ion-label>
-      <ion-input readonly>{{seguidor.data.respuesta2}}</ion-input>
-    </ion-item>
-    <br>
-    
-    <ion-item>
-      <ion-label position="stacked">¿Te gustaría ver más conferencias?</ion-label>
-      <ion-input readonly>{{seguidor.data.respuesta3}}</ion-input>
-    </ion-item>
-    <br>
-    
-    <ion-item>
-      <ion-label position="stacked">Calificación:</ion-label>
-      <ion-input readonly>{{seguidor.data.calificacion}}</ion-input>
-    </ion-item>
-    <br>
-    
-    <ion-item>
-      <ion-label position="stacked">Comentarios:</ion-label>
-      <ion-input readonly>{{seguidor.data.comentario}}</ion-input>
-    </ion-item>
-    <br>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Escuela de procedencia: </label>
+      <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.escuela}}
+      style="border-color: rgb(255, 0, 0);">
+    </div>
+
+    <div class="form-group">
+      <label class="ion-text-wrap" for="exampleInputEmail1">¿Te gustaría recibir nuestras promociones, ofertas o sorteos de RWR? </label>
+      <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.respuesta1}}
+      style="border-color: rgb(43, 255, 0);">
+    </div>
+
+    <div class="form-group">
+      <label class="ion-text-wrap" for="exampleInputEmail1">¿Te gustaría formar parte de la familia RWR?</label>
+      <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.respuesta2}}
+      style="border-color: rgb(43, 255, 0);">
+    </div>
+
+    <div class="form-group">
+      <label class="ion-text-wrap" for="exampleInputEmail1">¿Te gustaría ver más conferencias?</label>
+      <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.respuesta3}}
+      style="border-color: rgb(43, 255, 0);">
+    </div>
+
+    <div class="form-group">
+      <label class="ion-text-wrap" for="exampleInputEmail1">Calificación:</label>
+      <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.calificacion}}
+      style="border-color: rgb(0, 0, 0);">
+    </div>
+
+    <div class="form-group">
+      <label class="ion-text-wrap" for="exampleInputEmail1">Comentarios:</label>
+      <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.comentario}}
+      style="border-color: rgb(0, 0, 0);">
+    </div>
   </div>
 </ion-content>

@@ -26,7 +26,7 @@
       <ion-input placeholder="Correo electrónico" clearInput value="clear me" type="text" [(ngModel)]="email" name="email" required="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input clearInput value="clear me" [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Password" required="true"></ion-input>
+      <ion-input [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Password" required="true"></ion-input>
       <ion-icon slot="end" [name]="passwordToggleIcon" (click)="togglePassword()"></ion-icon>
     </ion-item>
     <br>
