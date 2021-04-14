@@ -60,7 +60,7 @@
 }
 
 .form-container .btn-send:hover{
-    background: #26A69A;
+    background: #1ABC9C;
 }
 
   
@@ -133,29 +133,6 @@
    transition: .5s;
    text-shadow: 0 2px 5px rgb(0, 0, 0, .5);
  }
-
-// .rating label:before{
-  
-//   content: '★';
-//   position: relative;
-//   display: block;
-//   font-size: 40px;
-//   color: #101010;
-// }
-
-// .rating label:after{
-  
-//   content: '★';
-//   position: absolute;
-//   display: block;
-//   font-size: 40px;
-//   color: #ff810b;
-//   top: 0;
-//   opacity: 0;
-//   transition: .5s;
-//   text-shadow: 0 2px 5px rgb(0, 0, 0, .5);
-// }
-
 
 .rating label:hover:after,
 .rating input:checked ~ label:after

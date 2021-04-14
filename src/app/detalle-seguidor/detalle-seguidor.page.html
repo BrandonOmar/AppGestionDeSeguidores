@@ -12,7 +12,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="new-background-color">
     <ion-buttons slot="secondary">
-      <ion-button class="tittle" (click)="logout()">Salir</ion-button>
+      <ion-button color="danger" class="tittle" (click)="logout()">Salir</ion-button>
     </ion-buttons>
     <ion-title class="tittle">
       Detalles de Seguidor
@@ -23,9 +23,9 @@
 <ion-content [scrollEvents]="true">
   <div class="form-container">
     <div>
-      <img style="width: 150px; height: 150px; margin-left: 85px;" src="https://iconfair.com/wp-content/uploads/2020/08/1-23-2.png">
+      <img style="width: 150px; height: 150px; margin-left: 85px;" src="https://capacidades.org/wp-content/uploads/2019/03/default-user.png">
     </div>
-
+    <br>
     <h2 class="nombre" style="text-align: center;">
       {{seguidor.data.nombre}}
      </h2>
