@@ -16,6 +16,8 @@ import { ToastController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
+  ocultar1: boolean = false;
+
   showPassword = false;
   passwordToggleIcon = 'eye';
 
@@ -34,6 +36,11 @@ export class LoginPage implements OnInit {
 
     }
   
+    accion1() {
+      this.ocultar1 = !this.ocultar1;
+    }
+
+    
     /**Método para mostrar y esconder contraseña en campo password */
     togglePassword() : void {
       this.showPassword = !this.showPassword;
