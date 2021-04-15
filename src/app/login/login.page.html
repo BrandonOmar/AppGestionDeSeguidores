@@ -38,27 +38,27 @@
 <ion-grid>
     <ion-row class="justify-content-around align-items-center">
       <div class="form-group-2">
-        <ion-button color="danger">Registrarte mediante Google &nbsp;
+        <ion-button color="danger" (click)="onLoginGoogle()">Registrarte mediante Google &nbsp;
         <img class="icon-center" src="assets/icon/google.png" width="40" height="40" 
-        class="google" (click)="onLoginGoogle()"></ion-button>
+        class="google"></ion-button>
       </div>
 
       <div class="form-group-2">
-        <ion-button color="tertiary">Registrarte mediante Facebook &nbsp; 
+        <ion-button color="tertiary" (click)="onLoginFacebook()">Registrarte mediante Facebook &nbsp; 
             <img class="icon-center" src="assets/icon/facebook.png" width="40" height="40" 
-            class="facebook" (click)="onLoginFacebook()"></ion-button>
+            class="facebook"></ion-button>
           </div>
 
           <div class="form-group-1">
-            <ion-button color="secondary">Registrarte mediante Twitter &nbsp;
+            <ion-button color="secondary" (click)="onLoginTwitter()">Registrarte mediante Twitter &nbsp;
         <img class="icon-center" src="assets/icon/twitter.png" width="40" height="40" 
-        class="twitter" (click)="onLoginTwitter()"></ion-button>   
+        class="twitter"></ion-button>   
           </div>
 
           <div class="form-group-1">
-            <ion-button color="medium">Registrarte mediante GitHub &nbsp;
+            <ion-button color="medium" (click)="onLoginGithub()">Registrarte mediante GitHub &nbsp;
         <img class="icon-center" src="assets/icon/github.png" width="40" height="40" 
-        class="github" (click)="onLoginGithub()"></ion-button>
+        class="github"></ion-button>
           </div>
     </ion-row>
   </ion-grid>
