@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:500');
+
 .title {
 background-color: #01579B;
 }
@@ -60,3 +62,19 @@ ion-content{
       }
     }
   }
+
+.btn-bootstrap {
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  color: #fff;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.btn-bootstrap:hover,
+.btn-bootstrap:focus {
+  background-color: #EC7063;
+}
+
+.btn-bootstrap:active {
+  background-color: #EC7063;
+}
