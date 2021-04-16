@@ -34,7 +34,6 @@ export class AdministradorPage implements OnInit {
     constructor(private db: AngularFirestore, private service: AuthService, 
       private alert: AlertController, private router:Router, private navCtrl: NavController){
 
-      // this.obtenerListaSeguidores();
      
       this.service.consultarSeguidores("DatosSeguidores").subscribe((resultadoConsultaDatos) => {
         this.arrayColeccionDatos = [];
@@ -48,35 +47,10 @@ export class AdministradorPage implements OnInit {
 
     }
 
-
     buscarSeguidor(event){
       const texto = event.target.value;
       this.textoBuscar = texto;
     }
-
-
-    obtenerListaSeguidores(){
-      this.service.consultarSeguidores("DatosSeguidores").subscribe((resultadoConsultaDatos) => {
-        this.arrayColeccionDatos = [];
-        resultadoConsultaDatos.forEach((datos: any) => {
-          this.arrayColeccionDatos.push({
-            idFirebase: datos.payload.doc.id,
-            data: datos.payload.doc.data()
-          });
-        })
-      });
-    }
-
-
-
-
-
-   //deleteSeguidor(item:any) : void
-  //  {
-     //  if (window.confirm('¿Está seguro de eliminar a éste seguidor?')) {
-      //   this.service.eliminarSeguidor(item.idFirebase)
-      // }
-   // }
 
     async deleteSeguidor(item:any) {
       const alert =  await this.alert.create({
@@ -124,8 +98,6 @@ export class AdministradorPage implements OnInit {
 
     ngOnInit() {
     }
-
-
 
 
 }

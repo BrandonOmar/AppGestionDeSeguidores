@@ -2,7 +2,6 @@ export interface DatosI{
     id: string;
     nombre :  string;
     estado : string;
-    municipio : string;
     facebook : string;
     email : string;
     numtelefono : number;
@@ -12,4 +11,5 @@ export interface DatosI{
     respuesta3: string;
     calificacion : string;
     comentario : string;
+    pais: string;
 }

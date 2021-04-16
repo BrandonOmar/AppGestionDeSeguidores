@@ -156,5 +156,9 @@ export class AuthService {
     this.objectSource.next(data);
   }
 
+  /** Método para obtener los países */
+  public consultarPaises(coleccion) {
+    return this.afs.collection(coleccion).snapshotChanges();
+  }
 
 }

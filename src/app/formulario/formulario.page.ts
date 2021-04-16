@@ -6,7 +6,7 @@ import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { Platform } from '@ionic/angular';
-
+import { Paises } from '../models/pais.interface';
 
 
 @Component({
@@ -16,6 +16,8 @@ import { Platform } from '@ionic/angular';
 })
 export class FormularioPage implements OnInit {
 
+  ocultar1: boolean = false;
+
   defaultSelectedRadio = "radio_2";
   //Get value on ionChange on IonRadioGroup
   selectedRadioGroup:any;
@@ -24,7 +26,10 @@ export class FormularioPage implements OnInit {
 
   numEstrellas = '';
    
-
+  arrayPaises: any = [{
+    idFirebase: "",
+    data: {} as Paises
+   }];
 
   radio_list = [
     {
@@ -53,8 +58,7 @@ export class FormularioPage implements OnInit {
     return new FormGroup(
       {
         nombre : new FormControl('',Validators.required),
-        estado : new FormControl('',Validators.required),
-        municipio : new FormControl('',Validators.required),
+        estado : new FormControl(''),
         facebook : new FormControl('',Validators.required),
         email : new FormControl('',[Validators.required, Validators.email]),
         numtelefono : new FormControl('',[Validators.required, Validators.minLength(10)]),
@@ -63,7 +67,8 @@ export class FormularioPage implements OnInit {
         respuesta2 : new FormControl(''),
         respuesta3 : new FormControl(''),
         calificacion : new FormControl(''),
-        comentario : new FormControl('',Validators.required)
+        comentario : new FormControl('',Validators.required),
+        pais : new FormControl('',Validators.required)
       });
   }
 
@@ -77,8 +82,30 @@ export class FormularioPage implements OnInit {
     this.formDatosSeguidor = this.createFormGroup();
 
 
+    this.service.consultarPaises("Paises").subscribe((resultadoConsultaDatos) => {
+      this.arrayPaises = [];
+      resultadoConsultaDatos.forEach((datos: any) => {
+        
+        this.arrayPaises.push({
+          idFirebase: datos.payload.doc.id,
+          data: datos.payload.doc.data()
+        });
+      })
+    //   for (var i in this.arrayPaises) {
+    //     console.log(this.arrayPaises[i].data.pais); 
+    //  }
+    });
   }
 
+  accion1(paisSelect : string): void {
+
+    if(paisSelect != 'México'){
+      this.ocultar1 = false;
+    }
+    else{
+      this.ocultar1 = true;
+    }
+  }
 
   ngOnInit() {
   }

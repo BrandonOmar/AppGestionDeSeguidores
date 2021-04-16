@@ -33,15 +33,15 @@
      <br>
 
      <div class="form-group">
+      <label style="margin-left: 6px;" for="exampleInputEmail1">País: </label>
+      <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.pais}}
+      style="border-color: rgb(0, 16, 109);">
+    </div>
+
+     <div class="form-group" *ngIf="ocultar1">
       <label style="margin-left: 6px;" for="exampleInputEmail1">Estado: </label>
       <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.estado}}
       style="border-color: rgb(0, 16, 109);">
-    </div>
-    
-    <div class="form-group">
-      <label style="margin-left: 6px;" for="exampleInputEmail1">Municipio: </label>
-      <input readonly class="form-control-plaintext" class="form-control" value={{seguidor.data.municipio}}
-      style="border-color:rgb(0, 16, 109);">
     </div>
     
     <div class="form-group">

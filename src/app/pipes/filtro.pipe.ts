@@ -15,7 +15,8 @@ export class FiltroPipe implements PipeTransform {
     
     return arrayColeccionDatos.filter( seguidor =>{
        return seguidor.data.nombre.toLocaleLowerCase().includes(texto)
-       || seguidor.data.estado.toLocaleLowerCase().includes(texto);
+       || seguidor.data.estado.toLocaleLowerCase().includes(texto)
+       || seguidor.data.pais.toLocaleLowerCase().includes(texto);
     });
   }
 

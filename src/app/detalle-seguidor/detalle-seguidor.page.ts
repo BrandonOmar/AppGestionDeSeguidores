@@ -12,6 +12,7 @@ import { NavController } from '@ionic/angular';
 export class DetalleSeguidorPage implements OnInit {
 
   seguidor: any;
+  ocultar1: boolean = false;
 
   constructor(private service: AuthService, private router:Router) { }
 
@@ -22,6 +23,13 @@ export class DetalleSeguidorPage implements OnInit {
      
       // console.log(data);
       this.seguidor = data;
+
+      if(this.seguidor.data.estado === ''){
+        this.ocultar1 = false;
+      }
+      else{
+        this.ocultar1 = true;
+      }
 
     }).unsubscribe();
 

@@ -38,7 +38,19 @@
         class="badge badge-danger"> Este campo debe ser llenado</span>
 
       <br>
+
       <ion-item>
+        <ion-label>País:</ion-label>
+        <ion-select  placeholder="Selecciona" clearInput value="clear me" type="text" formControlName="pais" (ionChange)="accion1($event.target.value)">
+          <ion-select-option *ngFor="let pais of arrayPaises">{{pais.data.pais}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <span
+        *ngIf="this.formDatosSeguidor.get('pais').errors?.required && this.formDatosSeguidor.get('pais').touched"
+        class="badge badge-danger"> Tiene que seleccionar</span>
+
+      <br>
+      <ion-item *ngIf="ocultar1">
         <ion-label>Estado:</ion-label>
         <ion-select placeholder="Selecciona" clearInput value="clear me" type="text" formControlName="estado">
           <ion-select-option>Aguascalientes</ion-select-option>
@@ -79,18 +91,6 @@
       <span
         *ngIf="this.formDatosSeguidor.get('estado').errors?.required && this.formDatosSeguidor.get('estado').touched"
         class="badge badge-danger"> Tiene que seleccionar</span>
-
-      <br>
-      <ion-item>
-        <ion-label position="floating">Municipio: </ion-label>
-        <ion-input clearInput value="clear me" type="text" formControlName="municipio"></ion-input>
-      </ion-item>
-      <span
-        *ngIf="this.formDatosSeguidor.get('municipio').errors?.required && this.formDatosSeguidor.get('municipio').touched"
-        class="badge badge-danger">
-        Este campo debe ser llenado
-      </span>
-
 
       <br>
       <ion-item>
